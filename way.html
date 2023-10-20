@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+		<meta charset="utf-8" content="width=device-width,initial-scale=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <style>
+			#container {
+				display: flex;
+				flex-flow : row nowrap;
+				justify-content : space-around;
+			}
+			.way {
+				margin-top : 5px;
+				width : 100%;
+				height : 650px;
+			}
+			section{
+				width : 45%;
+				font-size : 1.5em;
+				flex-grow : 1;
+				text-align : center;
+			}
+			p img {
+				width : 25px;
+			}
+			article {
+				display : flex;
+				flex-flow : row wrap;
+				margin-bottom : 2em;
+			}
+			article div {
+				width : 40%;
+				flex-grow: 1;
+			}
+			h4{
+				line-height: 2em;
+			}
+			.bus-ani{
+				height : 50px;
+				display: flex;
+				flex-flow : row nowrap;
+				justify-content: space-between;
+			}
+			.bus-ani div {
+				width : 50px;
+			}
+			.bus-ani img{
+				width : 100%;
+				margin-bottom : 20px;
+			}
+			.bus-ani img:first-child{
+				left : 5px;
+			}
+			.bus-ani img:last-child{
+				right : 5px;
+			}
+			.bl-bus{
+				animation-name : movebl;
+				animation-duration: 4s;
+				left : 50px;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+			}
+			.gr-bus{
+				animation-name : movegr;
+				animation-duration: 4s;
+				animation-delay: 2s;
+				right : 50px;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+				opacity: 0;
+			}
+			.a1, .a2 {
+				margin-bottom : 30px;
+			}
+			.waytext {
+				margin-top : 10px;
+			}
+			.zz{
+				position: relative;
+				flex-grow: 1;
+			}
+			.zz img{
+				position : absolute;
+
+				width : 45px;
+				margin-top: 5px;
+			}
+			@keyframes movebl{
+				0%{
+					left :0%;
+					opacity: 1;
+				}
+				49%{
+					left :90%;
+					opacity: 1;
+				}
+				50%{
+					opacity: 0;
+				}
+				100%{
+					opacity: 0;
+				}
+			}
+			@keyframes movegr{
+				0%{
+					right : 0%;
+					opacity: 1;
+				}
+				49%{
+					right : 90%;
+					opacity: 1;
+				}
+				50%{
+					opacity: 0;
+				}
+				100%{
+					opacity: 0;
+				}
+			}
+			@media screen and (max-width : 1024){
+				@keyframes movebl{
+				0%{
+					left :0%;
+					opacity: 1;
+				}
+				49%{
+					left : 55%;
+					opacity: 1;
+				}
+				50%{
+					opacity: 0;
+				}
+				100%{
+					opacity: 0;
+				}
+			}
+			@keyframes movegr{
+				0%{
+					right : 0%;
+					opacity: 1;
+				}
+				49%{
+					right : 55%;
+					opacity: 1;
+				}
+				50%{
+					opacity: 0;
+				}
+				100%{
+					opacity: 0;
+				}
+			}
+			}
+
+
+			@media screen and (max-width: 768px){
+				#container {
+					flex-flow: row wrap;
+				}
+				section {
+					width : 100%;
+					/* border : 1px solid blue; */
+				}
+				.waytext {
+					font-size : 3.9vw;
+				}
+				.bus-ani {
+					margin-top : 60px;
+				}
+				.a1 {
+					margin-top : 20px;
+				}
+				.a1,.a2,.a3,.a4,.a5{
+					font-size: 4vw;
+					width : 100%;
+				}
+				article {
+
+					display: block;
+				}
+				article div {
+					width : 50%;
+					display: inline-block;
+				}
+				.way {
+					height : 90%;
+				}
+				@keyframes movebl{
+				0%{
+					left :0%;
+					opacity: 1;
+				}
+				49%{
+					left : 80%;
+					opacity: 1;
+				}
+				50%{
+					opacity: 0;
+				}
+				100%{
+					opacity: 0;
+				}
+			}
+			@keyframes movegr{
+				0%{
+					right : 0%;
+					opacity: 1;
+				}
+				49%{
+					right : 80%;
+					opacity: 1;
+				}
+				50%{
+					opacity: 0;
+				}
+				100%{
+					opacity: 0;
+				}
+			}
+			}
+	@media screen and (max-width: 360px){
+			.way {
+				height:90%;
+			}
+			@keyframes movebl{
+				0%{
+					left :0%;
+					opacity: 1;
+				}
+				49%{
+					left : 80%;
+					opacity: 1;
+				}
+				50%{
+					opacity: 0;
+				}
+				100%{
+					opacity: 0;
+				}
+			}
+			@keyframes movegr{
+				0%{
+					right : 0%;
+					opacity: 1;
+				}
+				49%{
+					right : 80%;
+					opacity: 1;
+				}
+				50%{
+					opacity: 0;
+				}
+				100%{
+					opacity: 0;
+				}
+			}
+		}
+        </style>
+    </head>
+    <body>
+		<header>
+            <div id="realheader">
+                <a href="kleinbin.html"><img src="image/logo.png" alt="로고사진" height="200px"></a>
+                <nav id="topmenu">
+					<ul>
+						<li><a href="kleinbin.html#introduce"><img src="image/logocookie.png" alt="쿠키일러스트">클라인빈 소개</a>
+							<ul class="submenu">
+								<li><a href="dessert.html">메뉴</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="ordercake.html">
+								주문제작 케이크
+								<img src="image/logocookie.png" alt="쿠키일러스트">
+							</a>
+							<ul class="submenu">
+								<li> <a href="howtoorder.html">주문양식&신청</a></li>
+								<li><a href="cakeprice.html">가격 안내</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="onedayclass.html">
+								원데이 클래스
+								<img src="image/logocookie.png" alt="쿠키일러스트">
+							</a>
+							<ul class="submenu">
+								<li><a href="cakeclass.html">케이크 클래스</a></li>
+								<li><a href="cookieclass.html">쿠키 클래스</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">
+								자주묻는질문
+								<img src="image/logocookie.png" alt="쿠키일러스트">
+							</a>
+							<ul class="submenu">
+								<li><a href="way.html">오시는길</a></li>
+								<li><a href="faq.html">FAQ</a></li>
+							</ul>
+						</li>
+					</ul>
+			    </nav>
+				<div id="sns">
+					<a href="https://www.instagram.com/klein._.bin/" alt="클라인빈인스타로이동" target="_blank">
+						<img src="image/insta.svg" alt="인스타아이콘">
+					</a>
+					<a href="https://pf.kakao.com/_MNlYT" alt="클라인빈카카오톡으로이동" target="_blank">
+						<img src="image/kakao1.svg" alt="카카오톡아이콘">
+					</a>
+					<a href="https://blog.naver.com/isb1526" alt="클라인빈네이버블로그로이동" target="_blank">
+						<img src="image/blog.svg" alt="블로그아이콘">
+					</a>
+                </div>
+            </div>
+		</header>
+		<div id="container">
+			<section>
+			<a href="https://www.google.com/maps/place/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C+%EB%8F%99%EB%8C%80%EB%AC%B8%EA%B5%AC+%EB%8B%B5%EC%8B%AD%EB%A6%AC%EB%8F%99+%EB%8B%B5%EC%8B%AD%EB%A6%AC%EB%A1%9C51%EA%B8%B8+3-3/@37.5728888,127.0579721,17z/data=!4m5!3m4!1s0x357cbb488cf73ddd:0xa4257f462be46263!8m2!3d37.5730361!4d127.0583624" target="_blank">
+				<img src="image/way.png" class="way">
+			</a>
+			<p class="waytext">지도를 클릭하시면 구글지도로 넘어갑니다</p>
+			</section>
+			<section>
+					<!-- <h2>버스노선</h2> -->
+					<div class="bus-ani">
+						<div>
+						<img src="image/bus-blue.png" alt="파란정류장">
+					</div>
+							<div class="zz">
+								<img src="image/busstop-blue.png" alt="버스" class="bl-bus">
+								<img src="image/busstop-green.gif" alt="버스" class="gr-bus">
+							</div>
+						<div>
+						<img src="image/bus-green.png" alt="초록정류장">
+					</div>
+					</div>
+					<article>
+					<div class="a1">
+						<h4>청솔우성아파트,답십리시장</h4>
+						<p><img src="image/bus-blue.png">420번버스</p>
+						<p><img src="image/bus-blue.png">720번버스</p>
+						<p><img src="image/bus-green.png">2015번 버스</p>
+						<p><img src="image/bus-green.png">2221번 버스</p>
+						<p><img src="image/bus-green.png">3216번 버스</p>
+						<p><img src="image/bus-green.png">3220번 버스</p>
+					</div>
+					<div class="a2">
+						<h4>답십리 2동 두산 아파트</h4>
+						<p><img src="image/bus-blue.png">262번 버스</p>
+						<p><img src="image/bus-blue.png">720번 버스</p>
+						<p><img src="image/bus-green.png">1218번 버스</p>
+						<p><img src="image/bus-green.png">2112번 버스</p>
+						<p><img src="image/bus-green.png">3220번 버스</p>
+					</div>
+					<div class="a3">
+						<h4>한양아파트,청솔우성아파트후문</h4>
+						<p><img src="image/bus-blue.png">262번 버스</p>
+						<p><img src="image/bus-green.png"> 2112번 버스</p>
+						<p><img src="image/bus-green.png">3220번 버스</p>
+					</div>
+			</article>
+				<div class="a4">
+					<h2> 지하철</h2>
+				</div>
+				<div class="a5">
+				<p>답십리역 하차 후 4번출구로 나와 도보 3분<br>
+					답십리역사거리 버스정류장에서 3216번-><br>
+					청솔우성아파트 하차 1218번 -> <br>
+					답십리2동두산아파트하차</p>
+				</div>
+				</section>
+			</div>
+			<button id="top"onclick="hdMove()"></button>
+
+        <footer>
+            <address>서울 동대문구 답십리로51길 3-3 1층</address>
+		</footer>
+		<script type="text/javascript" src="js.js"></script>
+
+    </body>
+</html>

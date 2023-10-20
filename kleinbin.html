@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=divice-width,initial-scale=1">
+   <script>
+      window.onload = function () {
+         AutoSlide();
+      }
+      /*body부분 다돌리고 함수가 돌아가게 만드는 부분*/
+      var slideIndex = 0;
+      showSlides(slideIndex);
+      /*    slideIndex의 변수 선언과 초기화
+         slideindex는 사진의 갯수를 세기위한 부분으로 사용됨
+         showslides의 변수로 slideindex사용
+      */
+      function plusSlides(n) {
+         showSlides(slideIndex += n);
+      }
+      function currentSlide(n) {
+         showSlides(slideIndex = n);
+      }
+      var captionText = document.getElementById("caption");
+      /* id=caption인곳을 지정해서 변수 captionText에 삽입 */
+      function showSlides(n) {
+         var i;
+         var slides = document.getElementsByClassName("slide");
+         /* 전체적인 코드길이를 줄이기위해 변수 선언 */
+         slideIndex++
+         if (slideIndex > slides.length) { slideIndex = 1 }
+         /* 정해진 사진 갯수보다 많을경우 초기화하는 부분 */
+
+         if (slideIndex < 1) { slideIndex = slides.length }
+         /* n<1 초기화된 인덱스에 사진갯수를 입력하는 부분 */
+
+         for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+            /* 배치되어있는 사진을 전부 안보이게하는 부분 */
+         }
+
+         slides[slideIndex - 1].style.display = "block";
+         /* 선택된 슬라이드에 스타일 display:block을 삽입하는 부분 */
+
+      }
+
+      function AutoSlide(n) {
+         showSlides();
+         TimeId = setTimeout(AutoSlide, 5000);
+         /*자동반복부분*/
+      }
+
+      function next() {
+         clearTimeout(TimeId);
+         /* 반복시간 초기화*/
+         AutoSlide();
+         /* 다시 구동시킴으로써 다음사진 + 반복 재시작*/
+      }
+
+      function prev() {
+         clearTimeout(TimeId);
+         /* 반복시간 초기화 */
+         slideIndex = slideIndex - 2;
+         /* 이전사진을 보기위한 인덱스값 조정 */
+         AutoSlide();
+         /* 반복에서 +1됨으로써 이전사진 + 반복 재시작*/
+      }
+
+      const countDownTimer = function (id, date) {
+         var _vDate = new Date(2020, 11, 25);
+         var _second = 1000;
+         var _minute = _second * 60;
+         var _hour = _minute * 60;
+         var _day = _hour * 24;
+         var timer;
+
+         function showRemaining() {
+            var now = new Date();
+            var distDt = _vDate - now;
+
+            if (distDt < 0) {
+               clearInterval(timer);
+               document.getElementById("#countdown").textContent = '해당 이벤트가 종료 되었습니다!';
+               return;
+            }
+            var days = Math.floor(distDt / _day);
+            var hours = Math.floor((distDt % _day) / _hour);
+            var minutes = Math.floor((distDt % _hour) / _minute);
+            var seconds = Math.floor((distDt % _minute) / _second);
+
+            document.getElementById("#countdown").textContent = days + '일 ';
+            document.getElementById("#countdown").textContent += hours + '시간 ';
+            document.getElementById("#countdown").textContent += minutes + '분 ';
+            document.getElementById("#countdown").textContent += seconds + '초';
+         }
+         timer = setInterval(showRemaining, 1000);
+      }
+      var dateObj = new Date(); dateObj.setDate(dateObj.getDate() + 1);
+
+      countDownTimer('countdown', '2020,11,25');
+
+   </script>
+   <style>
+      @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
+      @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+      .countdown h1{
+         font-size : 30px;
+      }
+      #countdown {
+         font-size: 2rem;
+      }
+      #introduce {
+         width: 97.917%;
+         margin-top: 150px;
+      }
+
+      #introduce p {
+         text-align: center;
+         font-size: 3em;
+      }
+
+      #introduce h1 {
+         text-align: center;
+         font-size: 3em;
+         color: chocolate;
+         justify-content: center;
+      }
+
+      .story {
+         background: url(image/sstorybackground2.png) no-repeat;
+         background-size: 97.917%;
+         margin-top: 30px;
+         margin-bottom: 100px;
+         height: 200px;
+         padding-top: 50px;
+      }
+
+      .story p {
+         font-family: 'Nanum Pen Script', cursive;
+      }
+
+      #mainimg {
+         /* border : 3px solid red; */
+         width: 97.917%;
+         height: 800px;
+         position: relative;
+         margin-bottom: 100px;
+         margin-top: 5px;
+         z-index: 1;
+      }
+
+      #mainimg .prevbt {
+         left: 0;
+         background-image: url(image/leftarr.png);
+      }
+
+      #mainimg .nextbt {
+         right: 0;
+         background-image: url(image/rightarr.png);
+      }
+
+      #mainimg img {
+         width: 100%;
+         height: 100%;
+      }
+
+      #mainimg button {
+         position: absolute;
+         top: 50%;
+         width: 120px;
+         height: 120px;
+         opacity: 0.6;
+         background-size: cover;
+      }
+
+      #mainimg button:hover {
+         opacity: 1;
+      }
+
+      #pagemove {
+         width: 100%;
+         font-size: 3em;
+         display: flex;
+         flex-flow: row no-wrap;
+         justify-content: space-between;
+
+      }
+
+      #pagemove div {
+         width: 30%;
+      }
+
+      #pagemove a {
+         color: white;
+      }
+
+      #pagemove a div {
+         width: 100%;
+         height: 400px;
+      }
+
+      #pagemove a div p {
+         display: none;
+      }
+
+      #pagemove a div:hover p {
+         display: block;
+      }
+
+      .cake {
+         background-image: url(image/cake8.jpg);
+      }
+
+      .oneday {
+         background-image: url(image/oneday2.jpg);
+      }
+
+      .dessert {
+         background-image: url(image/dessert.jpg);
+      }
+
+      #newcoo {
+         display: flex;
+         flex-flow: row wrap;
+      }
+
+      #newcoo p {
+         padding: 20px;
+         background-color: rgb(245, 225, 110);
+         font-weight: bold;
+      }
+
+      #newcookie>h1 {
+         font-size: 3em;
+      }
+
+      #newcookie img {
+         border-radius: 50%;
+      }
+
+      #xmasani {
+         position: relative;
+      }
+
+      #xmasbg {
+         width: 1024px;
+      }
+
+      .xmas {
+         display: flex;
+         flex-flow: row wrap;
+      }
+
+      #christmas>h1 {
+         font-size: 3em;
+      }
+
+      #christmas p {
+         padding: 20px;
+         background-color: rgb(58, 168, 54);
+         color: rgb(255, 0, 0);
+         font-weight: bold;
+         font-size: 1.5em;
+      }
+
+
+      #christmas {
+         position: relative;
+         margin-top: 300px;
+      }
+
+      #xmas {
+         position: absolute;
+         animation: motion 1.3s linear 0s infinite;
+         left: 0;
+         width: 300px;
+      }
+
+      @keyframes motion {
+         0% {
+            top: -30px;
+         }
+
+         20% {
+            top: -40px;
+         }
+
+         40% {
+            top: -30px;
+         }
+
+         60% {
+            top: -40px;
+         }
+
+         80% {
+            top: -30px;
+         }
+
+         100% {
+            top: -30px;
+         }
+      }
+
+      @media screen and (max-width : 1280px) {
+         html {
+            font-size: 1vw;
+         }
+
+         #container {
+            width: 1024px;
+         }
+         @keyframes motion {
+         0% {
+            top: -100px;
+         }
+
+         20% {
+            top: -110px;
+         }
+
+         40% {
+            top: -100px;
+         }
+
+         60% {
+            top: -110px;
+         }
+
+         80% {
+            top: -100px;
+         }
+
+         100% {
+            top: -100px;
+         }
+      }
+      .xmas {
+         width : 90%;
+      }
+      .xmas div{
+         width : 100%;
+      }
+      .xmas img {
+         width : 80%;
+      }
+      }
+
+      @media screen and (max-width : 1024px) {
+         html {
+            font-size: 2vw;
+         }
+
+         #container {
+            width: 768px;
+         }
+
+         #pagemove {
+            flex-flow: row wrap;
+
+            font-size: 1.5rem;
+         }
+
+         #pagemove div {
+            width: 40%;
+            flex-grow: 1;
+         }
+
+         #pagemove div div {
+            padding-top: 100px;
+         }
+
+         .dessert {
+            background-repeat: no-repeat;
+            background-size: cover;
+         }
+
+         #xmas {
+            display: none;
+         }
+      }
+
+      #xmasbg {
+         width: 90%;
+      }
+
+      @media screen and (max-width : 768px) {
+         html {
+            font-size: 5vw;
+         }
+
+         #container {
+            width: 100%;
+         }
+
+         #mainimg {
+            height: 500px;
+
+         }
+
+         #mainimg button {
+            /* border : 1px solid blue; */
+            top: 40%;
+            width: 80px;
+            height: 80px;
+         }
+
+         #introduce {
+            font-size: 0.5rem;
+         }
+
+         #pagemove {
+            font-size: 1rem;
+            height: 80%;
+            margin-top: 300px;
+         }
+
+         #pagemove a div p {
+            display: block;
+         }
+
+         .xmas {
+            width: 80%;
+         }
+
+         .xmas div {
+            width: 100%;
+         }
+
+         .xmas div img {
+            width: 100%;
+         }
+
+         .xmas div {
+            font-size: 0.75rem;
+         }
+
+         #xmas {
+            display: none;
+         }
+      }
+
+      #xmasbg {
+         width: 90%;
+      }
+
+      @media screen and (max-width : 360px) {
+         #mainimg {
+            height: 300px;
+         }
+
+         #pagemove div {
+            font-size: 2rem;
+            width: 60%;
+         }
+
+         .cake {
+            margin-bottom: 10px;
+         }
+
+         .oneday {
+            margin-bottom: 10px;
+         }
+
+         .footer {
+            margin-top: -5px;
+         }
+
+         #xmas {
+            display: none;
+         }
+      }
+
+      #xmasbg {
+         width: 90%;
+      }
+
+      .countdown h1 {
+         font-size: 1rem;
+      }
+   </style>
+</head>
+
+<body>
+   <header>
+      <div id="realheader">
+         <a href="kleinbin.html"><img src="image/logo.png" alt="로고사진" height="200px"></a>
+         <nav id="topmenu">
+            <ul>
+               <li><a href="#introduce"><img src="image/logocookie.png" width="70px" height="60px" alt="쿠키일러스트">클라인빈
+                     소개</a>
+                  <ul class="submenu">
+                     <li><a href="dessert.html">메뉴</a></li>
+                  </ul>
+               </li>
+               <li><a href="ordercake.html">주문제작 케이크<img src="image/logocookie.png" width="70px" height="60px"
+                        alt="쿠키일러스트"></a>
+                  <ul class="submenu">
+                     <li> <a href="howtoorder.html">주문양식&신청</a></li>
+                     <li><a href="cakeprice.html">가격 안내</a></li>
+                  </ul>
+               </li>
+               <li><a href="onedayclass.html"> 원데이 클래스<img src="image/logocookie.png" width="70px" height="60px"
+                        alt="쿠키일러스트"></a>
+                  <ul class="submenu">
+                     <li><a href="cakeclass.html">케이크 클래스</a></li>
+                     <li><a href="cookieclass.html">쿠키 클래스</a></li>
+                  </ul>
+               </li>
+               <li><a href="#">자주묻는질문<img src="image/logocookie.png" width="70px" height="60px" alt="쿠키일러스트"></a>
+                  <ul class="submenu">
+                     <li><a href="way.html">오시는길</a></li>
+                     <li><a href="faq.html">FAQ</a></li>
+                  </ul>
+               </li>
+            </ul>
+
+         </nav>
+         <div id="sns">
+            <a href="https://www.instagram.com/klein._.bin/" alt="클라인빈인스타로이동" target="_blank">
+               <img src="image/insta.svg" width="30px" alt="인스타아이콘">
+            </a>
+            <a href="https://pf.kakao.com/_MNlYT" alt="클라인빈카카오톡으로이동" target="_blank">
+               <img src="image/kakao1.svg" width="30px" alt="카카오톡아이콘">
+            </a>
+            <a href="https://blog.naver.com/isb1526" alt="클라인빈네이버블로그로이동" target="_blank">
+               <img src="image/blog.svg" width="30px" alt="블로그아이콘">
+            </a>
+         </div>
+      </div>
+   </header>
+   <div id="container">
+      <div id="mainimg">
+         <img src="image/4154.jpg" alt="크리스마스 에디션" class="slide">
+         <!--매장사진 제품 이미지 넘어가는 효과-->
+         <img src="image/4144.jpg" alt="케익사진" class="slide">
+         <img src="image/4156.jpg" alt="쿠키사진" class="slide">
+         <img src="image/4168.jpg" alt="컵케익 사진" class="slide">
+         <img src="image/4172.jpg" alt="매장사진" class="slide">
+         <button class="prevbt" onclick="prev()"></button><!-- 좌우 이동 버튼 -->
+         <button class="nextbt" onclick="next()"></button>
+      </div>
+      <div class="countdown">
+         <h1>크리스마스까지 : 2020년 12월 25일까지 </h1>
+      </div>
+      <h2 id="countdown"> </h2>
+
+
+      <img src="image/christmasbg.gif" alt="크리스마스일러스트" id="xmasbg">
+      <section id="christmas">
+         <h1 style="font-family: 'Do Hyeon', sans-serif;">
+            <img src="image/xmas.svg" alt="말풍선사진" id="xmas">
+            <span style="color: red;">크</span><span style="color: green;">리</span><span
+               style="color: red;">스</span><span style="color: green;">마</span><span style="color: red;">스</span>
+            스페셜 디저트 출시!!
+         </h1>
+         <div class="xmas">
+            <div>
+               <img src="image/christmas.jpg" alt="크리스마스 컵케익">
+               <p>당근 머핀4종 </p>
+            </div>
+            <div>
+               <img src="image/christmas2.jpg" alt="크리스마스 브라우니">
+               <p>크리스마스 곰돌이 브라우니</p>
+            </div>
+         </div>
+
+
+      </section>
+      <!--<section id="xmasani">
+      <img src="image/santa.png" alt="산타사진" id="santa">
+
+   </section>-->
+      <section id="introduce" name="introduce">
+         <h1>Klein bin Story</h1>
+         <div class="story">
+            <p>"1인이 운영하는 작은가게</p>
+            <p>정성스럽게 굽고 뚱땅뚱땅 만들어요"</p>
+         </div>
+
+      </section>
+      <section id="pagemove">
+         <div>
+            <a href="ordercake.html">
+               <div class="cake">
+                  <p>SPECIAL ORDERMADE CAKE</p><br>
+                  <p>주문 제작 케이크</p>
+               </div>
+            </a>
+         </div>
+         <div>
+            <a href="onedayclass.html">
+               <div class="oneday">
+                  <p>ONEDAY COOKING CLASS</p><br>
+                  <p>원데이 클래스</p>
+               </div>
+            </a>
+         </div>
+         <div>
+            <a href="dessert.html">
+               <div class="dessert">
+                  <p>DESSERT</p>
+                  <p>MENU</p><br>
+                  <p>디저트 메뉴</p>
+               </div>
+            </a>
+         </div>
+      </section>
+
+
+   </div>
+   <button id="top" onclick="hdMove()"></button>
+   <footer class="footer">
+      <address>서울 동대문구 답십리로51길 3-3 1층</address>
+   </footer>
+   <script type="text/javascript" src="js.js"></script>
+   <script type="text/javascript" src="index.js"></script>
+   <script type="text/javascript" src="countdown.js"></script>
+</body>
+
+</html>

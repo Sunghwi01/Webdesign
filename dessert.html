@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=divice-width,initial-scale=1">
+   <script>
+      var i;
+      var imgct;   //img control의 약자로 왼쪽에 표시되는 그림을 컨트롤하기위한 변수로사용
+      // 클래스이름을 저장하기위한 변수임
+      function cupimg(n) {
+         imgct = document.getElementsByClassName("cup");
+         showimg(n);
+      }
+      function cooimg(n) {
+         imgct = document.getElementsByClassName("coo");
+         showimg(n);
+      }
+      function speimg(n) {
+         imgct = document.getElementsByClassName("spe");
+         showimg(n);
+      }
+      function showimg(n) {
+         for (i = 0; i < imgct.length; i++) {
+            imgct[i].style.display = "none";
+            //왼쪽에 표시된 그림을 번호상관없이 전부 지우도록 하는 부분
+         }
+         imgct[n - 1].style.display = "block";
+         //왼쪽에 표시될 그림을 보이게하는 부분
+      }
+   </script>
+   <style>
+      header {
+         margin-bottom : 10px;
+      }
+      #menuimg {
+         width: 100%;
+         height: 300px;
+         background: url(image/menubg.png);
+         background-repeat: no-repeat;
+         padding-top: 80px;
+         font-size : 2.5rem;
+      }
+      h1 {
+         margin-top: -80px;
+      }
+      h2 {
+         text-align: center;
+         margin-bottom: 80px;
+         font-size: 2em;
+         color: rgb(202, 162, 74);
+      }
+
+      section {
+         width: 100%;
+         display: flex;
+         flex-flow: row wrap;
+         margin-bottom: 100px;
+      }
+/* section은 기존에 box1,2,3이던 부분 */
+      .title{
+         width : 100%;
+      }
+      section article {
+         flex-grow: 1;
+      }
+      section article:first-of-type {
+         width: 40%;
+         margin-top: 50px;
+      }
+/* 기본에 big img 이던 부분 */
+      section article:first-of-type p {
+         font-size: 2em;
+         font-weight: bold;
+         color: rgb(214, 111, 93);
+      }
+
+      section article:first-of-type img {
+         width: 90%;
+      }
+
+      section article:first-of-type div {
+         position: static;
+      }
+
+      section article:first-of-type div:first-of-type {
+         display: block;
+      }
+/* 초기값으로 맨처음있는 그림을 표시 */
+
+      section article:first-of-type div:not(:first-of-type) {
+         display: none;
+      }
+/* 처음 나오는 그림을 제외하고 모두 안보이게 표시 */
+      section article:last-of-type {
+         width: 50%;
+         display: flex;
+         flex-flow: row wrap;
+         border: 2px solid rgb(250, 172, 158);
+         padding: 30px;
+      }
+/* 기존에 minimg 이던 부분 */
+      section article:last-of-type div {
+         position: relative;
+         width: 50%;
+         margin-bottom: 30px;
+      }
+
+      section article:last-of-type div div {
+         width: 70%;
+         border: 2px solid rgb(223, 152, 140);
+      }
+
+      section article:last-of-type div div:hover {
+         box-shadow: 2px 2px rgb(212, 147, 136);
+         background-color: rgba(255, 175, 161, 0.6);
+      }
+
+      section article:last-of-type div img:first-of-type {
+         width: 100%;
+         height: 180px;
+      }
+
+      section article:last-of-type div img:last-of-type {
+         position: absolute;
+         top: 45px;
+         right: 60px;
+         opacity: 0.8;
+         display: none;
+      }
+
+      section article:last-of-type div:hover img:last-of-type {
+         display: block;
+      }
+
+      section article:last-of-type p {
+         font-weight: bold;
+      }
+
+      .click {
+         cursor: pointer;
+      }/* 자바스크립트로 사용하면서 a태그가 필요없어짐에따라 그림위에 올라가면
+      마우스 커서모양을 손가락으로 변경 */
+      @media screen and (max-width : 1280px) {
+         #container {
+            width : 1024px;
+         }
+         .title {
+            height : 50px;
+         }
+         section article:last-of-type div img:last-of-type{
+            top : 40px;
+            right : 35px;
+         }
+      }
+      @media screen and (max-width : 1024px) {
+         #container {
+            width : 768px;
+         }
+         section article:first-of-type div{
+            width : 600px;
+         }
+         section article:last-of-type {
+            width : 100%;
+         }
+         section article:last-of-type div img:last-of-type{
+            top : 45px;
+            right : 70px;
+         }
+         section:last-of-type article:last-of-type div {
+            width : 30%;
+         }
+         section:last-of-type article:last-of-type div img:last-of-type{
+            top : 40px;
+            right : 55px;
+         }
+         section:last-of-type article:last-of-type div div {
+            width : 100%;
+         }
+      }
+      @media screen and (max-width : 768px) {
+         #container {
+            font-size: 0.5rem;
+            width : 100%;
+         }
+         h1 {
+            font-size: 2rem;
+         }
+         section article:first-of-type div{
+            width : 100%;
+         }
+         section article:first-of-type div img{
+            width : 50%;
+         }
+         section article:last-of-type div:hover img:last-of-type{
+            display: none;
+         }
+         section article:last-of-type{
+            padding : 0;
+            justify-content: space-around;
+            border : 0;
+         }
+         section article:last-of-type div{
+            width : 25%;
+            margin-bottom: 10;
+         }
+         section article:last-of-type div div{
+            width : 100%;
+         }
+         section article:last-of-type div div p {
+            display: none;
+         }
+         section article:last-of-type div div img:first-of-type {
+            width : 100%;
+            height : 100%;
+         }
+      }
+   </style>
+</head>
+
+<body>
+   <header>
+      <div id="realheader">
+         <a href="kleinbin.html"><img src="image/logo.png" alt="로고사진" height="200px"></a>
+         <nav id="topmenu">
+            <ul>
+               <li><a href="kleinbin.html#introduce"><img src="image/logocookie.png" alt="쿠키일러스트">클라인빈 소개</a>
+                  <ul class="submenu">
+                     <li><a href="dessert.html">메뉴</a></li>
+                  </ul>
+               </li>
+               <li>
+                  <a href="ordercake.html">
+                     주문제작 케이크
+                     <img src="image/logocookie.png" alt="쿠키일러스트">
+                  </a>
+                  <ul class="submenu">
+                     <li> <a href="howtoorder.html">주문양식&신청</a></li>
+                     <li><a href="cakeprice.html">가격 안내</a></li>
+                  </ul>
+               </li>
+               <li>
+                  <a href="onedayclass.html">
+                     원데이 클래스
+                     <img src="image/logocookie.png" alt="쿠키일러스트">
+                  </a>
+                  <ul class="submenu">
+                     <li><a href="cakeclass.html">케이크 클래스</a></li>
+                     <li><a href="cookieclass.html">쿠키 클래스</a></li>
+                  </ul>
+               </li>
+               <li>
+                  <a href="#">
+                     자주묻는질문
+                     <img src="image/logocookie.png" alt="쿠키일러스트">
+                  </a>
+                  <ul class="submenu">
+                     <li><a href="way.html">오시는길</a></li>
+                     <li><a href="faq.html">FAQ</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </nav>
+         <div id="sns">
+            <a href="https://www.instagram.com/klein._.bin/" alt="클라인빈인스타로이동" target="_blank">
+               <img src="image/insta.svg" alt="인스타아이콘">
+            </a>
+            <a href="https://pf.kakao.com/_MNlYT" alt="클라인빈카카오톡으로이동" target="_blank">
+               <img src="image/kakao1.svg" alt="카카오톡아이콘">
+            </a>
+            <a href="https://blog.naver.com/isb1526" alt="클라인빈네이버블로그로이동" target="_blank">
+               <img src="image/blog.svg" alt="블로그아이콘">
+            </a>
+         </div>
+      </div>
+   </header>
+   <div id="container">
+      <div id="menuimg">
+         <h1>MENU<br>
+            메뉴
+         </h1>
+      </div>
+
+      <section>
+         <div class="title">
+            <h2>컵케이크</h2>
+         </div>
+         <article>
+            <div class="cup">
+               <img src="image/cupcake1.jpg" alt="컵케이크 사진">
+               <p>초코 / 레드벨벳 / 당근 컵케이크</p>
+               <p>가격:4500원</p>
+            </div>
+
+            <div class="cup">
+               <img src="image/cupcake2.jpg" alt="컵케이크 사진">
+               <p>체리 필링 컵케이크</p>
+               <p>가격:5000원</p>
+            </div>
+
+            <div class="cup">
+               <img src="image/cupcake3.jpg" alt="컵케이크 사진">
+               <p>쿠키몬스터 컵케이크</p>
+               <p>가격:5500원</p>
+            </div>
+
+            <div class="cup">
+               <img src="image/cupcake4.jpg" alt="컵케이크 사진">
+               <p>엘모 컵케이크</p>
+               <p>가격:5500원</p>
+            </div>
+         </article>
+         <article>
+            <div>
+               <div class="click" onclick="cupimg(1)">
+                  <img src="image/smcupcake1.png" alt="컵케이크 사진">
+                  <img src="image/size.png" alt="사이즈 확대">
+                  <p>초코 / 레드벨벳 / 당근 컵케이크</p>
+                  <p>가격:4500원</p>
+               </div>
+            </div>
+
+            <div>
+               <div class="click" onclick="cupimg(2)">
+                  <img src="image/smcupcake2.png" alt="컵케이크 사진">
+                  <img src="image/size.png" alt="사이즈 확대">
+                  <p>체리 필링 컵케이크</p>
+                  <p>가격:5000원</p>
+               </div>
+            </div>
+
+            <div>
+               <div class="click" onclick="cupimg(3)">
+                  <img src="image/smcupcake3.png" alt="컵케이크 사진">
+                  <img src="image/size.png" alt="사이즈 확대">
+                  <p>쿠키몬스터 컵케이크</p>
+                  <p>가격:5500원</p>
+               </div>
+            </div>
+
+            <div>
+               <div class="click" onclick="cupimg(4)">
+                  <img src="image/smcupcake4.png" alt="컵케이크 사진">
+                  <img src="image/size.png" alt="사이즈 확대">
+                  <p>엘모 컵케이크</p>
+                  <p>가격:5500원</p>
+               </div>
+
+            </div>
+         </article>
+      </section>
+
+      <section>
+         <div class="title">
+            <h2>쿠키</h2>
+         </div>
+         <article>
+
+            <div class="coo">
+               <img src="image/acookie2.jpg" alt="쿠키">
+               <p>허쉬 아메리칸 쿠키</p>
+               <p>가격:3000원</p>
+            </div>
+
+            <div class="coo">
+               <img src="image/acookie3.jpg" alt="쿠키">
+               <p>아몬드 아메리칸 쿠키</p>
+               <p>가격:3500원</p>
+            </div>
+
+            <div class="coo">
+               <img src="image/acookie4.jpg" alt="쿠키">
+               <p>m&n 아메리칸 쿠키</p>
+               <p>가격:3500원</p>
+            </div>
+
+            <div class="coo">
+               <img src="image/acookie6.jpg" alt="쿠키">
+               <p>여러가지 아메리칸 쿠키</p>
+               <p>가격:3500원</p>
+            </div>
+         </article>
+         <article>
+            <div>
+               <div class="click" onclick="cooimg(1)">
+                  <img src="image/smacookie2.jpg" alt="쿠키">
+                  <img src="image/size.png" alt="사이즈 확대">
+                  <p>허쉬 아메리칸 쿠키</p>
+                  <p>가격:3000원</p>
+               </div>
+            </div>
+
+            <div>
+               <div class="click" onclick="cooimg(2)">
+                  <img src="image/smacookie3.png" alt="쿠키">
+                  <img src="image/size.png" alt="사이즈 확대">
+                  <p>아몬드 아메리칸 쿠키</p>
+                  <p>가격:3500원</p>
+               </div>
+
+            </div>
+
+            <div>
+
+               <div class="click" onclick="cooimg(3)">
+                  <img src="image/smacookie4.png" alt="쿠키">
+                  <img src="image/size.png" alt="사이즈 확대">
+                  <p>m&n 아메리칸 쿠키</p>
+                  <p>가격:3500원</p>
+               </div>
+
+            </div>
+
+            <div>
+
+               <div class="click" onclick="cooimg(4)">
+                  <img src="image/smacookie6.png" alt="쿠키">
+                  <img src="image/size.png" alt="사이즈 확대">
+                  <p>여러가지<br>아메리칸 쿠키</p>
+                  <p>가격:3500원</p>
+               </div>
+
+            </div>
+         </article>
+      </section>
+
+      <section>
+         <div class="title">
+            <h2>스페셜 디저트</h2>
+         </div>
+         <article>
+            <div class="spe">
+               <img src="image/brownie.jpg" alt="브라우니">
+               <p>오레오 치즈 브라우니</p>
+               <p>가격:5500원</p>
+            </div>
+
+            <div class="spe">
+               <img src="image/dessert.jpg" alt="치즈케이크">
+               <p>제리 치즈케이크</p>
+               <p>가격:6500원</p>
+            </div>
+
+            <div class="spe">
+               <img src="image/scone.jpg" alt="스콘">
+               <p>솔티드 카라멜 스콘</p>
+               <p>가격:5000원</p>
+            </div>
+
+            <div class="spe">
+               <img src="image/tirami.jpg" alt="티라미수">
+               <p>티라미수</p>
+               <p>가격:7500원</p>
+            </div>
+
+            <div class="spe">
+               <img src="image/tarte.jpg" alt="타르트">
+               <p>딸기 타르트</p>
+               <p>가격:6000원</p>
+            </div>
+
+            <div class="spe">
+               <img src="image/tarte2.jpg" alt="타르트">
+               <p>청포도 타르트</p>
+               <p>가격:6000원</p>
+            </div>
+         </article>
+         <article>
+            <div>
+               <div class="click" onclick="speimg(1)">
+                  <img src="image/brownie.png" alt="브라우니">
+                  <img src="image/size.png" alt="사이즈 확대">
+                  <p>오레오 치즈 브라우니</p>
+                  <p>가격:5500원</p>
+               </div>
+            </div>
+
+            <div>
+               <div class="click" onclick="speimg(2)">
+                  <img src="image/dessert.png" alt="치즈케이크">
+                  <img src="image/size.png" alt="사이즈 확대">
+                  <p>제리 치즈케이크</p>
+                  <p>가격:6500원</p>
+               </div>
+            </div>
+
+            <div>
+               <div class="click" onclick="speimg(3)">
+                  <img src="image/scone.png" alt="스콘">
+                  <img src="image/size.png" alt="사이즈 확대">
+                  <p>솔티드 카라멜 스콘</p>
+                  <p>가격:5000원</p>
+               </div>
+            </div>
+
+            <div>
+               <div class="click" onclick="speimg(4)">
+                  <img src="image/tirami.png" alt="티라미수">
+                  <img src="image/size.png" alt="사이즈 확대">
+                  <p>티라미수</p>
+                  <p>가격:7500원</p>
+               </div>
+            </div>
+
+            <div>
+               <div class="click" onclick="speimg(5)">
+                  <img src="image/tarte.png" alt="타르트">
+                  <img src="image/size.png" alt="사이즈 확대">
+                  <p>딸기 타르트</p>
+                  <p>가격:6000원</p>
+               </div>
+            </div>
+
+            <div>
+               <div class="click" onclick="speimg(6)">
+                  <img src="image/tarte2.png" alt="타르트">
+                  <img src="image/size.png" alt="사이즈 확대">
+                  <p>청포도 타르트</p>
+                  <p>가격:6000원</p>
+               </div>
+            </div>
+         </article>
+      </section>
+
+   </div>
+   <footer>
+      <address>서울 동대문구 답십리로51길 3-3 1층</address>
+   </footer>
+   <script type="text/javascript" src="js.js"></script>
+   <!-- 기존에 있던 div에 있던 id를 전부지우고 자바스크립트를
+      돌리기위한 클래스로   이름 변경했음
+      box 1,2,3 -> section
+      bigimg, minimg -> article
+      한섹션 안에 먼저나오는 아티클이 bigimg
+      뒤에나오는 아티클이 minimg
+      minimg에 있는 click클래스 = 마우스커서를 바꾸기 위한 클래스
+      click클래스가있는 div에 onclick == 자바스크립트를 실행시키기 위한 이벤트를 발생시키는부분
+      기존 bigimg에 있는 클래스 == 자바스크립트의 실행부분을 설정한것
+-->
+   <link rel= "stylesheet" type="text/css" href="css-media.css">
+</body>
+
+</html>

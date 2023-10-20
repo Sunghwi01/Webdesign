@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link rel= "stylesheet" type="text/css" href="css.css">
+
+        <style>
+         .cakenav h1{
+                 text-align: center;
+             }
+             .cakenav{
+                margin:0 auto;
+                margin-top: 80px;
+             }
+          section {
+            width : 97.917%;
+          }
+          section article {
+
+            display : flex;
+            flex-flow : row wrap;
+            width : 100%;
+          }
+          section article button {
+            width : 100%;
+          }
+          footer div{
+            height : 50px;
+            overflow : hidden;
+          }
+          footer div a{
+            padding : 100px;
+            background-color : pink;
+            color : white;
+          }
+          #cakesize {
+             border : 1px solid black;
+          }
+         .ad{
+            width : 18%;
+            margin : 0 2.5%;
+            display: inline-block;
+         }
+         .bd {
+            width : 40%;
+            margin : 0 4.5%;
+            display: inline-block;
+         }
+         .bd p {
+            color :rgb(64, 103, 211);
+         }
+         .sheetsub {
+            text-align : center;
+            font-size : 25px;
+         }
+         .answer {
+            display: none;
+            padding-bottom: 30px;
+         }
+         .forad {
+             display: flex;
+             flex-flow : row nowrap;
+         }
+         .ad img{
+             height : 150px;
+         }
+         .ad p {
+            color :rgb(64, 103, 211);
+            margin : 10px 0;
+            font-size: 1.2rem;
+         }
+         .question{
+            font-size : 25px;
+            padding: 30px 0;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+         }
+         .question:hover {
+            color: #2962ff;
+         }
+         [id$="-toggle"] {
+            margin-right: 15px;
+         }
+         .cakesub{
+                 display: flex;
+             width : 400px;
+                 flex-flow: row nowrap;
+                 justify-content: space-around;
+             margin-top: 30px;
+             margin : 0 auto;
+             }
+             .cakesub li{
+                 display: inline-block;
+                 background-color: rgb(255, 151, 55);
+                 padding:30px;
+             border-radius: 20px;
+             font-weight: bold;
+            margin : 0 auto;
+             }
+         @media screen and (max-width:1024px) {
+            .ad p {
+               font-size: 1rem;
+            }
+            .ad {
+               width : 40%;
+               margin-bottom : 30px;
+            }
+            .bd {
+               width : 40%;
+               margin : 0 2.5%;
+            }
+         }
+         @media screen and (max-width:768px) {
+            #container {
+               margin-left : 10px;
+               margin-right : 10px;
+            }
+            .ad {
+               width : 40%;
+               margin-bottom : 30px;
+               border : 1px solid rgb(201, 21, 51);
+            }
+            .ad img {
+               width : 150px;
+               height : 150px;
+            }
+            .question {
+               font-size: 2.5rem;
+            }
+            .ad p{
+               font-size : 2.25rem;
+               background-color: rgb(221, 221, 101);
+            }
+            .ad div {
+               font-size : 2rem;
+            }
+            .forad {
+               flex-flow : row wrap;
+               justify-content: space-around;
+            }
+            .answer {
+               width : 100%;
+            }
+            .bd {
+               width : 40%;
+               margin : 0 2.5%;
+               margin-bottom : 30px;
+            }
+            .bd p {
+               font-size: 1.5rem;
+            }
+            .bd div {
+               font-size: 2rem;
+            }
+            .sheetsub {
+               font-size : 0.8rem;
+            }
+            .sheettxt{
+               font-size : 0.7rem;
+            }
+            h1 {
+               font-size : 40px;
+            }
+            #ans-2{
+               font-size : 1.2rem;
+            }
+            #ans-5{
+               font-size : 1.5rem;
+            }
+            #ans-6{
+               font-size : 0.7rem;
+            }
+            .cakesub li {
+               font-size : 0.5rem;
+            }
+         }
+         #cakemenu, .cakesub {
+            width : 100%;
+         }
+         @media screen and (max-width:360px) {
+            #container {
+               text-align : justify;
+
+            }
+            .question {
+               font-size : 1.8rem;
+               text-align : center;
+            }
+            .ad {
+               width : 80%;
+            }
+            .bd {
+               width : 80%;
+               margin : 0 2.5%;
+               margin-bottom : 30px;
+
+            }
+            .sheetsub {
+               font-size : 1.5rem;
+            }
+            .sheettxt{
+               font-size : 1.2rem;
+         }
+            #ans-2{
+               font-size : 1.6rem;
+            }
+            #ans-5{
+               font-size : 1.5rem;
+            }
+            #ans-6{
+               font-size : 1.6rem;
+            }
+         }
+        </style>
+    </head>
+    <body>
+      <header>
+            <div id="realheader">
+                <a href="kleinbin.html"><img src="image/logo.png" alt="로고사진" height="200px"></a>
+                <nav id="topmenu">
+               <ul>
+                  <li><a href="kleinbin.html#introduce"><img src="image/logocookie.png" alt="쿠키일러스트">클라인빈 소개</a>
+                     <ul class="submenu">
+                        <li><a href="dessert.html">메뉴</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a href="ordercake.html">
+                        주문제작 케이크
+                        <img src="image/logocookie.png" alt="쿠키일러스트">
+                     </a>
+                     <ul class="submenu">
+                        <li> <a href="howtoorder.html">주문양식</a></li>
+                        <li><a href="cakeprice.html">가격 안내</a></li>
+
+                     </ul>
+                  </li>
+                  <li>
+                     <a href="onedayclass.html">
+                        원데이 클래스
+                        <img src="image/logocookie.png" alt="쿠키일러스트">
+                     </a>
+                     <ul class="submenu">
+                        <li><a href="cakeclass.html">케이크 클래스</a></li>
+                        <li><a href="cookieclass.html">쿠키 클래스</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a href="#">
+                        자주묻는질문
+                        <img src="image/logocookie.png" alt="쿠키일러스트">
+                     </a>
+                     <ul class="submenu">
+                        <li><a href="way.html">오시는길</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                     </ul>
+                  </li>
+               </ul>
+             </nav>
+            <div id="sns">
+               <a href="https://www.instagram.com/klein._.bin/" alt="클라인빈인스타로이동" target="_blank">
+                  <img src="image/insta.svg" alt="인스타아이콘">
+               </a>
+               <a href="https://pf.kakao.com/_MNlYT" alt="클라인빈카카오톡으로이동" target="_blank">
+                  <img src="image/kakao1.svg" alt="카카오톡아이콘">
+               </a>
+               <a href="https://blog.naver.com/isb1526" alt="클라인빈네이버블로그로이동" target="_blank">
+                  <img src="image/blog.svg" alt="블로그아이콘">
+               </a>
+                </div>
+            </div>
+      </header>
+      <div id="container">
+         <div class="cakenav">
+            <h1>주문양식</h1>
+         </div>
+         <section>
+            <article>
+               <button class="question" id="que-1"><span id="que-1-toggle">1</span><span> 성함과 연락처를 적어주세요!</span></button>
+               <div class="answer" id="ans-1"> </div>
+            </article>
+            <article>
+               <button class="question" id="que-2"><span id="que-2-toggle">2</span><span> 케이크의 사이즈와 디자인을 골라주세요!</span></button>
+               <div class="answer" id="ans-2"> 케이크 디자인은 기본적인 원형과 하트모양이 있습니다. <br>
+               원형 케이크는 1호(15cm), 2호(18cm), 3호(21cm)가 있고 하트모양 케이크는 1호와 2호로만 가능합니다<br>
+               미니 도시락 케이크는 원형 모양과 하트 모양 둘 다 가능합니다.<br>
+               디자인과 문구는 주문 양식을 보내주신 후 정하시면 됩니다!(원하시는 디자인 사진이나 그림을 보내주시면 더 빠른 상담 가능합니다!)<br>
+               색감은 변경 가능합니다. 색이 진할 수록 입안에 색이 착색될 수 있습니다.
+                </div>
+            </article>
+            <article>
+               <button class="question" id="que-3"><span id="que-3-toggle">3</span><span> 케이크 시트 종류를 골라주세요!</span></button>
+               <div class="answer" id="ans-3">
+                   <div class="forad">
+                  <div class="ad">
+                     <img class="sheetimg" src="image/earlgrey.jpg" alt="얼그레이케이크시트" width="100%">
+                     <p class="sheetsub">얼그레이 케이크시트</p>
+                     <div class="sheettxt">
+                     얼그레이 특유의 씁슬한 맛
+                     크림의 단맛이 잘 어울리는 시트에요!
+                     </div>
+                  </div>
+                  <div class="ad ad1">
+                     <img class="sheetimg"  src="image/choco.jpg" alt="초코케이크시트" width="100%">
+                     <p class="sheetsub">초코 케이크시트</p>
+                     <div class="sheettxt">부드러운 초코 스폰지케이크 시트입니다.<br>
+                     단 맛을 좋아하는 분들에게 추천드려요!.
+                     </div>
+                  </div>
+                  <div class="ad">
+                     <img class="sheetimg" src="image/redvelet.png" alt="레드벨벳케이크시트" width="100%">
+                     <p class="sheetsub">레드벨벳 케이크시트</p>
+                     <div class="sheettxt">붉은색이 특징인 시트입니다.<br>
+                     크리스마스 분위기를 내기 좋아요!
+                     </div>
+                  </div>
+                  <div class="ad ad1">
+                     <img class="sheetimg"  src="image/carrot.png" alt="당근케이크시트" width="100%">
+                     <p class="sheetsub">당근 케이크시트</p>
+                     <div class="sheettxt"> 당근을 갈아서 만든 케이크시트입니다.<br>
+                        당근을 싫어하는 아이들도 잘 먹어요.
+                     </div>
+                  </div>
+                </div>
+               </div>
+            </article>
+            <article>
+               <button class="question" id="que-4"><span id="que-4-toggle">4</span><span> 아이싱 크림 종류를 골라주세요!</span></button>
+               <div class="answer" id="ans-4">
+                  <div class="bd">
+                     <img class="creamimg" src="image/cheese.jpg" alt="크림치즈"" width="100%">
+                     <p class="sheetsub">크림치즈</p>
+                     <div class="sheettxt">레드벨벳 케이크 시트와 당근 케이크 시트와 잘어울리는 아이싱 크림입니다.</div>
+                  </div>
+                  <div class="bd">
+                     <img class="creamimg" src="image/butter.gif" alt="버터크림" width="100%">
+                     <p class="sheetsub">버터크림</p>
+                     <div class="sheettxt">초코 케이크 시트와 얼그레이 케이크시트에 잘 어울리는 아이싱 크림입니다.</div>
+                  </div>
+               </div>
+            </article>
+            <article >
+               <button class="question" id="que-5"><span id="que-5-toggle">5</span><span> 원하시는 날짜와 시간을 정해주세요!</span></button>
+               <div class="answer" id="ans-5"> 주문하신 케이크를 받기 최소2-3일전에 신청해 주셔야 원할한 작업이 됩니다.</div>
+            </article>
+            <article >
+               <button class="question" id="que-6"><span id="que-6-toggle">6</span><span> 주문시 유의사항! </span></button>
+               <div class="answer" id="ans-6">
+                  모든 주문 케이크는 선입금으로 진행됩니다.<br>
+                  주문 취소는 5일 전에만 가능하니 신중하게 주문 부탁드립니다!<br>
+                  주문은 적어도 2-3일 전에는 완성해서 주시는게 좋아요!<br>
+                  주문케이크는 추후 인스타에 업로드 될 예정이니 이름을 가리고 싶으신 분들은 미리 말씀해주세요!
+
+               </div>
+            </article>
+         </section>
+      </div>
+      <div id="cakemenu">
+         <ul class="cakesub">
+            <li><a href="cakeprice.html">가격 안내</a></li>
+
+         </ul>
+      </div>
+        <footer>
+            <address>서울 동대문구 답십리로51길 3-3 1층</address>
+      </footer>
+      <script type="text/javascript" src="js.js"></script>
+   </body>
+   <script>
+      const items = document.querySelectorAll('.question');
+
+      function openCloseAnswer() {
+        const answerId = this.id.replace('que', 'ans');
+        var idnum = this.id;
+        var num = idnum.charAt(4);
+        if(document.getElementById(answerId).style.display === 'block') {
+         document.getElementById(answerId).style.display = 'none';
+         document.getElementById(this.id + '-toggle').textContent = num;
+        } else {
+         document.getElementById(answerId).style.display = 'block';
+         document.getElementById(this.id + '-toggle').textContent = num;
+        }
+      }
+
+      items.forEach(item => item.addEventListener('click', openCloseAnswer));
+     </script>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link rel= "stylesheet" type="text/css" href="css.css">
+        <style>
+
+			.cakenav h1 {
+					text-align: center;
+					color: rgb(255, 151, 55);
+					font-size : 2.5rem;
+					font-style: oblique;
+					text-shadow : 1px 1px 1px black;
+					font-weight: 1000;
+				}
+             .cakenav{
+                margin:0 auto;
+                margin-top: 80px;
+             }
+             .cakesub{
+                 display: flex;
+             width : 400px;
+                 flex-flow: row nowrap;
+                 justify-content: space-around;
+             margin-top: 30px;
+             margin : 0 auto;
+             }
+             .cakesub li{
+                 display: inline-block;
+                 background-color: rgb(255, 151, 55);
+                 padding:30px;
+             border-radius: 20px;
+             font-weight: bold;
+            margin : 0 auto;
+             }
+         #cakemain{
+                 position: relative;
+                 width: 100%;
+             height : 800px;
+             margin-top : 50px;
+             }
+             .c1,.c2,.c3,.c4{position: absolute;}
+             .c1 {
+				left: 13px;
+				width: 750px;
+				border: 1px solid rgb(255, 151, 55);
+				border-radius :80px;
+			}
+
+			.c2 {
+				top: 5px;
+				right: 13px;
+				width: 500px;
+				border: 1px solid rgb(255, 151, 55);
+				border-radius: 80px;
+			}
+
+			.c3 {
+				top: 900px;
+				left: 40%;
+				border: 1px solid rgb(255, 151, 55);
+				border-radius: 80px;
+			}
+
+			.c4 {
+				/*border : 1px solid black;*/
+				top: 470px;
+				left: 800px;
+				width: 500px;
+				height: 450px;
+			}
+         @media screen and (max-width:1280px) {
+            .c1{
+               width : 45%;
+               top : 460px;
+               ;
+            }
+            .c2 {
+               width : 45%;
+               top : 460px;
+            }
+            .c4 {
+               width : 80%;
+               left : 0px;
+               top : 0px;
+               height : 500px;
+            }
+            .cakesub {
+               padding-top : 200px;
+            }
+         }
+
+         @media screen and (max-width:1024px) {
+            #cakemain {
+               height : 650px;
+            }
+            .c1{
+               width : 45%;
+               top : 500px;
+            }
+            .c2 {
+               width : 45%;
+               top : 500px;
+            }
+            .c4 {
+               width : 80%;
+               left : 0px;
+               top : 0px;
+               height : 500px;
+            }
+         .cakesub {
+               padding-top : 200px;
+            }
+         }
+
+         @media screen and (max-width:768px) {
+            #cakemain {
+               height : 100%;
+               display: flex;
+               flex-flow : row wrap;
+            }
+            .c1,.c2,.c3,.c4{
+               position : static;
+            }
+            .c1, .c2, .c3{
+               order : 2;
+            }
+            .c4 {
+               order : 1;
+            }
+            .cakesub {
+               padding-top: 15px;
+            }
+         }
+         .c1 {
+                animation: fadein1 4s;
+            }
+      .c2 {
+         animation: fadein2 6s;
+     /*    -moz-animation: fadein 2s 1s;
+         /* Firefox */
+         /*-webkit-animation: fadein 2s 1s;
+         /* Safari and Chrome */
+         /*-o-animation: fadein 2s 1s;
+         /* Opera */
+         }
+         .c4 {
+            animation : fadein3 8s;
+         }
+      @keyframes fadein1 {
+         0% {
+            opacity: 0;
+         }
+
+         100% {
+            opacity: 1;
+         }
+      }
+      @keyframes fadein2 {
+          0% {
+              opacity: 0;
+          }
+          25%{
+              opacity: 0;
+          }
+          100%{
+              opacity: 1;
+          }
+      }
+      @keyframes fadein3 {
+          0% {
+              opacity: 0;
+          }
+          35%{
+              opacity: 0;
+          }
+          100%{
+              opacity: 1;
+          }
+      }
+        </style>
+    </head>
+    <body>
+      <header>
+            <div id="realheader">
+                <a href="kleinbin.html"><img src="image/logo.png" alt="로고사진" height="200px"></a>
+                <nav id="topmenu">
+               <ul>
+                  <li><a href="kleinbin.html#introduce"><img src="image/logocookie.png" alt="쿠키일러스트">클라인빈 소개</a>
+                     <ul class="submenu">
+                        <li><a href="dessert.html">메뉴</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a href="ordercake.html">
+                        주문제작 케이크
+                        <img src="image/logocookie.png" alt="쿠키일러스트">
+                     </a>
+                     <ul class="submenu">
+                        <li> <a href="howtoorder.html">주문 양식</a></li>
+                        <li><a href="cakeprice.html">가격 안내</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a href="onedayclass.html">
+                        원데이 클래스
+                        <img src="image/logocookie.png" alt="쿠키일러스트">
+                     </a>
+                     <ul class="submenu">
+                        <li><a href="cakeclass.html">케이크 클래스</a></li>
+                        <li><a href="cookieclass.html">쿠키 클래스</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a href="#">
+                        자주묻는질문
+                        <img src="image/logocookie.png" alt="쿠키일러스트">
+                     </a>
+                     <ul class="submenu">
+                        <li><a href="way.html">오시는길</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                     </ul>
+                  </li>
+               </ul>
+             </nav>
+            <div id="sns">
+               <a href="https://www.instagram.com/klein._.bin/" alt="클라인빈인스타로이동" target="_blank">
+                  <img src="image/insta.svg" alt="인스타아이콘">
+               </a>
+               <a href="https://pf.kakao.com/_MNlYT" alt="클라인빈카카오톡으로이동" target="_blank">
+                  <img src="image/kakao1.svg" alt="카카오톡아이콘">
+               </a>
+               <a href="https://blog.naver.com/isb1526" alt="클라인빈네이버블로그로이동" target="_blank">
+                  <img src="image/blog.svg" alt="블로그아이콘">
+               </a>
+                </div>
+            </div>
+      </header>
+      <div id="container">
+        <a href="#sns"><img src="image/top.png" alt="위로 아이콘" id="top"></a>
+         <div class="cakenav">
+         <h1>주문제작케이크</h1>
+
+         </div>
+         <section id="cakemain">
+
+            <img src="image/cake1.jpg" alt="케익사진" class="c1">
+            <img src="image/cake2.jpg" alt="케익사진" class="c2">
+           <!-- <img src="image/cake3.jpg" alt="케익사진" class="c3" width="550px"> -->
+            <img src="image/designcake.gif" alt="당신의케익을디자인하세요문구사진" class="c4">
+        </section>
+
+      <div id="cakemenu">
+         <ul class="cakesub">
+            <li><a href="howtoorder.html">주문 하기</a></li>
+
+         </ul>
+      </div>
+   </div>
+
+        <footer>
+            <address>서울 동대문구 답십리로51길 3-3 1층</address>
+      </footer>
+      <script type="text/javascript" src="js.js"></script>
+    </body>
+</html>

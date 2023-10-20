@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+/*
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel= "stylesheet" type="text/css" href="css.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript" src="js.js"></script>
+*/
+*{
+	box-sizing : border-box;
+	margin: 0 auto;
+	padding: 0;
+	font-family: 'Noto Sans KR', sans-serif;
+	text-align : center;
+}
+ul, li { list-style: none; }
+a { text-decoration: none;
+	/* 전체선택자에 center를 넣음으로써 로고위치가 이상해지므로 고치는 부분*/
+	text-align: unset;
+}
+body {
+	background-color:  rgba(255, 154, 154,0.4);
+}
+#container {
+	width : 1280px;
+	height : auto;
+}
+#top{
+    position: fixed;
+    bottom : 50px;
+    right: 50px;
+	background-image : url(image/top.png);
+	background-size : cover;
+	width : 120px;
+	height : 120px;
+	z-index: 3;
+}
+button:focus {
+	outline:none;
+}
+button{
+	cursor : pointer;
+	border : 0;
+	border-radius : 0;
+	background-color: rgba( 255, 255, 255, 0 );
+}
+header {
+	width :100%;
+	height : 200px;
+	border-bottom : 1px  rgb(226, 187, 104);
+	box-shadow: 0px 2px 2px rgb(196, 163, 93);
+}
+header a img{
+	margin-left: -80px;
+}
+#realheader{
+	width : 1280px;
+	position : relative;
+	/*a 태그 정렬을 위한 부분*/
+	text-align: initial;
+}
+#sns{
+	position: absolute;
+	top: 1%;
+	right: 5%;
+}
+#sns a img{
+	width : 30px;
+}
+#topmenu {
+	width :800px;
+	position: absolute;
+	top: 80px;
+	right : 0px;
+}
+#topmenu>ul>li{
+	float : left;
+	position: relative;
+	width : 25%;
+	height: 70px;
+	font-weight: bold;
+	padding-top: 25px;
+	color: black;
+	z-index : 2;
+}
+#topmenu>ul>li:hover{
+	background-color: rgba(230, 212, 175,0.5 );
+}
+#topmenu>ul>li:hover a{
+	color: saddlebrown;
+}
+#topmenu>ul>li:last-child{
+	margin-right : 0;
+	float : right;
+}
+#topmenu ul:after{
+	content:"";
+	display : block;
+	clear : both;
+}
+#topmenu>ul>li>a{
+	text-align : center;
+	margin-left: 25px;
+
+}
+#topmenu>ul>li>a>img{
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	width : 70px;
+	height : 60px;
+	display: none;
+}
+#topmenu>ul>li:hover img{
+	display: inline;
+	margin : 0;
+}
+#topmenu>ul>li:hover .submenu{
+	display: inline-block;
+	width: 100%;
+}
+.submenu{
+	position: absolute;
+	top: 70px;
+	left: 0px;
+	text-align: center;
+	background-color: rgb(255, 246, 192);
+	display: none;
+}
+.submenu li a{
+	padding:20px 35px;
+}
+.submenu li{
+	padding: 10px 10px;
+}
+.submenu li:hover{
+	background-color: rgb(211, 184, 158);
+}
+a:link,a:visited{
+	color: black;
+}
+a:active{
+	 color: rgb(245, 79, 79);
+}
+footer{
+	width: 100%;
+	background-color:  rgb(211, 184, 158);
+	margin-top: 100px;
+}
+address{
+	padding:40px;
+	text-align: center;
+}
+/********************************************/
+@media screen and (max-width : 1280px){
+	/*wide 1024 - 1280*/
+	#container {
+		width : 1024px;
+	}
+	#top{
+		width : 80px;
+		height : 80px;
+	}
+	header {
+		height : 220px;
+	}
+	header a img{
+		height : 150px;
+		margin-left : 300px;
+	}
+	#realheader{
+		width : 1024px;
+		height : 100%;
+	}
+	#sns{
+		top: 10%;
+	}
+	#sns a img{
+		height : 30px;
+		margin : 0 10px;
+	}
+	#topmenu {
+		width :100%;
+		top: 150px;
+	}
+	#topmenu>ul>li:hover{
+		background-color: rgba(230, 212, 175,0.5 );
+	}
+	#topmenu>ul>li:hover a{
+		color: saddlebrown;
+	}
+}
+/*768 - 1024*/
+@media screen and (max-width : 1024px) {
+	#container, #realheader {
+		width : 768px;
+	}
+	header a img{
+		margin-left : 150px;
+	}
+}
+@media screen and (max-width : 768px) {
+	html {
+		font-size : 2vw;
+	}
+	#container {
+		width : 100%;
+	}
+	#top{
+		bottom: 5%;
+		right : 5%;
+	}
+	header {
+		margin-left: 0;
+		height : 500px;
+	}
+	#realheader a img{
+		position: absolute;
+		top : 0%;
+		left : 0%;
+		width : 100%;
+		margin-left : 0px;
+	}
+	#realheader{
+		width : 100%;
+		height : 500px;
+	}
+	#sns{
+		position: absolute;
+		display: flex;
+		flex-flow: row no-wrap;
+		top: 150px;
+		left: 0;
+		width : 100%;
+	}
+	#sns a {
+		width : 100%;
+	}
+	#sns a img{
+		height : 100px;
+		margin : 0px;
+		position: relative;
+	}
+	#topmenu {
+		position: absolute;
+		width : 100%;
+		top: 300px;
+		height : 200px;
+		font-size : 2rem;
+	}
+	#topmenu>ul>li{
+		float: none;
+		height : 100px;
+		display: inline-block;
+		background-color: rgba(230, 212, 175,0.5 );
+		color: saddlebrown;
+	}
+	#topmenu>ul>li>a{
+		margin-left: 25px;
+	}
+	#topmenu ul:after{
+		content:"";
+		display : block;
+		clear : both;
+	}
+	#topmenu>ul>li:hover img{
+		display: none;
+	}
+	#topmenu>ul>li>a>img{
+		position: absolute;
+		left: 10px;
+		top: 20px;
+		width : 70px;
+		height : 60px;
+		display : none;
+	}
+	.swiper-container{
+		height : 400px;
+	}
+	.submenu{
+		font-size: 1.5rem;
+		width : 100%;
+		position: absolute;
+		height : 100px;
+		top : 100px;
+		left: 0px;
+		display: inline-flex;
+		flex-flow : row no-wrap;
+	}
+	#topmenu>ul>li:hover .submenu{
+		display: inline-flex;
+		width: 100%;
+	}
+	.submenu li{
+		padding: 0;
+		width :50%;
+		border : 3px solid white;
+		padding-top : 30px;
+	}
+	.submenu li:active{
+		background-color: rgb(211, 184, 158);
+	}
+}
+@media screen and (max-width : 360px) {
+
+}

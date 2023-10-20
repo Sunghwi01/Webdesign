@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=divice-width,initial-scale=1">
+
+    <style>
+        .cookieclass>img {
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        .cookieclass {
+            display: flex;
+            flex-flow: row wrap;
+            margin-bottom: 100px;
+        }
+
+        .info1 {
+            /* border: 2px solid rgb(226, 187, 104); */
+            width: 68%;
+            display: flex;
+            flex-flow: row wrap;
+            padding-top: 20px;
+
+        }
+        .info2 {
+            /* border: 2px solid rgb(226, 187, 104); */
+            width: 30%;
+            padding: 20px;
+        }
+
+        .info2 img,
+        .info2 p {
+            display: inline-block;
+        }
+
+        .info3 {
+
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .info3 p {
+            border: 1px solid rgb(226, 187, 104);
+
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            background-color: rgba(255, 218, 145, 0.5);
+            font-size: 1.5em;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .cookieclass2 {
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .ac,
+        .sc,
+        .lc {
+            display: flex;
+            flex-flow: row wrap;
+            margin-bottom: 100px;
+        }
+
+        .ac div,
+        .sc div,
+        .lc div {
+            width: 30%;
+            border: 2px solid rgb(226, 187, 104);
+            padding: 20px;
+            line-height: 30px;
+        }
+
+        .ac div h1,
+        .sc div h1,
+        .lc div h1 {
+            margin-bottom: 30px;
+        }
+
+        .ac img,
+        .sc img,
+        .lc img {
+            border: 2px solid rgb(226, 187, 104);
+        }
+
+        .ac p:last-child::before,
+        .sc p:last-child::before,
+        .lc p:last-child::before {
+            width: 60px;
+            height: 20px;
+            border: 1px solid rgb(224, 83, 58);
+            content: "Tip!";
+            color: rgb(224, 83, 58);
+            padding: 0px 10px;
+            background-color: rgb(226, 187, 104);
+            font-weight: bold;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .ac p:last-child,
+        .sc p:last-child,
+        .lc p:last-child {
+            color: rgb(224, 83, 58);
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .ac div p,
+        .sc div p,
+        .lc div p {
+            font-weight: bold;
+        }
+
+        #apply {
+            border: 2px solid rgb(226, 187, 104);
+            padding: 20px;
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+            font-weight: bold;
+            line-height: 40px;
+        }
+
+        #butt1 {
+            font-size: 2em;
+            color: rgb(224, 83, 58);
+            background-color: rgb(226, 187, 104);
+            border: 2px solid rgb(180, 150, 85);
+            font-weight: bolder;
+
+        }
+
+        #butt {
+            font-size: 1.3em;
+            margin-right: -75%;
+            font-weight: bolder;
+            background-color: rgb(226, 187, 104);
+            border: 2px solid rgb(180, 150, 85);
+        }
+
+        #butt:after {
+            content: "";
+            display: block;
+        }
+
+        @media screen and (max-width : 1280px) {
+            .info3 p {
+                width: 35%;
+                height: 150px;
+            }
+        }
+
+        @media screen and (max-width : 1024px) {
+            #butt {
+                margin-left: 0%;
+            }
+
+            .info1 div {
+                width: 50%;
+            }
+
+            .info3 {
+                flex-grow: 1;
+            }
+            .lc img{
+                width : 60%;
+            }
+            .lc div {
+                width : 90%;
+            }
+            .info3 p {
+                width: 45%;
+                font-size: 1.4rem;
+            }
+        }
+
+        @media screen and (max-width : 768px) {
+            #container {
+                font-size: 1rem;
+            }
+            .lc img,
+            .lc div,
+            .ac img,
+            .ac div,
+            .sc img,
+            .sc div {
+                width: 90%;
+            }
+
+            .info3 {
+                font-size: 1.8rem;
+            }
+
+            .info3 p {
+                padding: 10px;
+                height: 40%;
+            }
+        }
+
+        @media screen and (max-width : 360px) {
+
+            .info1,
+            .info2 {
+                width: 50%;
+            }
+
+            .info2 {
+                font-size: 1rem;
+                line-height: 2;
+            }
+
+            #butt {
+                border: 1px solid red;
+                margin-left: 0%;
+
+            }
+        }
+        #butt {
+            -webkit-animation: blink 1.5s ease-in-out infinite alternate;
+            -moz-animation: blink 1.5s ease-in-out infinite alternate;
+            animation: blink 1.5s ease-in-out infinite alternate;
+        }
+
+        @-webkit-keyframes blink {
+            0% {
+                opacity: 0.2;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes blink {
+            0% {
+                opacity: 0.2;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0.2;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="realheader">
+            <a href="kleinbin.html"><img src="image/logo.png" alt="로고사진" height="200px"></a>
+            <nav id="topmenu">
+                <ul>
+                    <li><a href="kleinbin.html#introduce"><img src="image/logocookie.png" alt="쿠키일러스트">클라인빈 소개</a>
+                        <ul class="submenu">
+                            <li><a href="dessert.html">메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="ordercake.html">
+                            주문제작 케이크
+                            <img src="image/logocookie.png" alt="쿠키일러스트">
+                        </a>
+                        <ul class="submenu">
+                            <li> <a href="howtoorder.html">주문양식&신청</a></li>
+                            <li><a href="cakeprice.html">가격 안내</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="onedayclass.html">
+                            원데이 클래스
+                            <img src="image/logocookie.png" alt="쿠키일러스트">
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="cakeclass.html">케이크 클래스</a></li>
+                            <li><a href="cookieclass.html">쿠키 클래스</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            자주묻는질문
+                            <img src="image/logocookie.png" alt="쿠키일러스트">
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="way.html">오시는길</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div id="sns">
+                <a href="https://www.instagram.com/klein._.bin/" alt="클라인빈인스타로이동" target="_blank">
+                    <img src="image/insta.svg" alt="인스타아이콘">
+                </a>
+                <a href="https://pf.kakao.com/_MNlYT" alt="클라인빈카카오톡으로이동" target="_blank">
+                    <img src="image/kakao1.svg" alt="카카오톡아이콘">
+                </a>
+                <a href="https://blog.naver.com/isb1526" alt="클라인빈네이버블로그로이동" target="_blank">
+                    <img src="image/blog.svg" alt="블로그아이콘">
+                </a>
+            </div>
+        </div>
+    </header>
+    <a href="#sns"><button id="top" onclick="hdMove()"></button></a>
+    <div id="container">
+
+        <div class="cookieclass">
+            <img src="image/oneday7.png" alt="원데이 클래스 사진" width=100%>
+            <div class="info1">
+                <h1>
+                    실제 수강생들의 생생한후기
+                </h1>
+                <div>
+                    <p>클래스후기</p>
+                    <h1>86개</h1>
+                </div>
+                <div>
+                    <p>클래스 만족도</p>
+                    <h1>100%</h1>
+                </div>
+                <div class="info3">
+
+                    <p>"남자친구와 좋은 추억만들어가요!"</p>
+                    <p>"집에서 아이에게 해줬더니 아이가 정말 좋아해요!"</p>
+                    <p>"직접 만들어 부모님께<br> 선물해 드렸어요"</p>
+                    <p>"친절하게 알려주셔서 재밌었어요!"</p>
+                </div>
+            </div>
+            <div class="info2">
+                <h2>맛있는 쿠키를 직접 내 손으로!<br>
+                    쿠키 원데이 클래스</h2><br>
+                <h3>
+                    가격: 1인 85000원<br>
+                    *2인 동시 신청시 5000원 할인해드립니다*
+                </h3><br>
+                <img src="image/person.svg" alt="사람 아이콘" width="20px">
+                <p>대상: 남녀노소 누구나 쿠키 만들고싶은사람</p>
+                <br>
+                <img src="image/time.svg" alt="시계 아이콘" width="20px">
+                <p>소요시간: 1시간~2시간</p>
+                <br>
+                <p>(개개인마다 속도 차이가 있습니다.)</p>
+                <br>
+                <img src="image/like.svg" alt="좋아요 아이콘" width="20px">
+                <p>클래스 만족도: 100%</p>
+                <form>
+                    <input type="button" name="버튼" value="신청하기" onclick="window.open('https://pf.kakao.com/_MNlYT')"
+                        id="butt">
+                </form>
+            </div>
+        </div>
+        <div class="cookieclass2">
+            <div class="info4">
+                <h1>클래스 소개</h1>
+                <h2>"지인, 친구, 연인과 함께 만드는 달콤한 추억!"<br>
+                    '아메리칸쿠키' '스모어쿠키' '르벵쿠키'중 하나를 선택해서 만들어요!
+                </h2><br>
+            </div>
+            <div class="ac">
+
+                <img src="image/acookie5.png" alt="아메리칸쿠키사진" width="68%">
+                <div>
+                    <h1>아메리칸 쿠키</h1>
+                    <p>이름만큼이나 버터가 듬뿍들어간 쿠키!</p>
+                    <p>버터가 많이 들어가서 부드럽고 풍미 또한 깊은 타입의 쿠키에요.
+                        스콘같기도 하지만 쿠키라 매력적이에요.</p>
+
+                    <p>
+                        <3가지종류>
+                    </p>
+                    <p>오리지널초코/오레오/마시멜로</p>
+
+                    <p>꾸덕꾸덕하고 묵진한 쿠키에요! 많이 달지 않아요!
+                        아메리칸 쿠키는 초창기부터 클라인빈과 늘 함께했던 쿠키 입니다!
+                    </p>
+                    <p>아메리카노와 마시면 더욱 맛있습니다.</p>
+                </div>
+            </div>
+            <div class="sc">
+
+                <img src="image/scookie5.png" alt="스모어쿠키" width="68%">
+                <div>
+                    <h1>스모어쿠키</h1>
+                    <p>부드럽고 쫀득한 식감에 그을린 마시멜로우와 부드럽게 녹은 초콜릿의 만남!</p>
+                    <p>
+                        <3가지종류>
+                    </p>
+                    <p>초코/로투스/오레오</p>
+                    <p>
+                        안에 마시멜로가 하나 통째로 들어가있는 쿠키에요!
+                        드시기전 렌지에 살짝만 돌려먹으면 좋아요!
+                        나온지 얼마되지 않았지만 오실때마다 몇개씩 기본으로 사가시는 인기메뉴!
+                    </p>
+                    <p> 먹기전 렌지에 살짝 돌려서 드세요!!<br> 마시멜로가 녹아 더욱 맛있어집니다.</p>
+                </div>
+            </div>
+            <div class="lc">
+
+                <img src="image/lcookie.jpg" alt="르뱅쿠키">
+                <div>
+                    <h1>르뱅쿠키</h1>
+                    <p>뉴욕 3대쿠키로 뉴욕가면 꼭 먹어봐야된다는 그 쿠키!!</p>
+                    <p>클라인빈 사장님의 원픽! 르뱅쿠키!</p>
+
+                    <p>안에 큼직만한 호두 그대로 들어가있는데 초코랑 조합이 좋아요.</p>
+                    <p>중간 중간 견과류가 씹혀서 자유시*,핫브레이* 그런 초코바를
+                        안먹는 사람도 좋아하는 견과류 쿠키!</p>
+                    <p>르뱅쿠키안에 들어가는 호두는 클라인빈 사장님이 직접 시장에 가서 그날 들어갈만큼의 양만 사와서 전처리 후
+                        넣어 만든답니다. 그만큼 애정과 재료 듬뿍 담아 만들어지는 르뱅쿠키!</p>
+                    <p>어떻게 먹어도 맛있지만 냉동고에 살짝<br> 얼려서 드셔보는것도 추천!</p>
+                </div>
+            </div>
+
+            <div id="apply">
+                <h1>
+                    <신청양식>
+                </h1>
+                <p>신청날짜/시간</p>
+                <P>수업가능시간:월~토 1시이후부터<br>*2인신청시 일요일도 가능합니다*</P>
+                <p>성함/연락처</p>
+                <p>신청 쿠키 종목</p>
+                <form>
+                    <input type="button" name="버튼" value="신청하러가기!!" onclick="window.open('https://pf.kakao.com/_MNlYT')"
+                        id="butt1">
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <button id="top" onclick="hdMove()"></button>
+    <footer>
+        <address>서울 동대문구 답십리로51길 3-3 1층</address>
+    </footer>
+    <script type="text/javascript" src="js.js"></script>
+</body>
+
+</html>

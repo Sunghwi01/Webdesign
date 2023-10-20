@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=divice-width,initial-scale=1">
+   <style>
+      span {
+         color: rgb(141, 47, 63);
+      }
+      .answer {
+         display: none;
+         padding-bottom: 30px;
+         text-align: center;
+         background-color: rgb(255, 162, 176);
+         width: 50%;
+         height: 50px;
+         border: 1px solid rgb(231, 228, 228);
+         border-radius: 15px;
+         margin: 20px auto;
+         padding: 10px;
+         box-shadow: 3px 3px 3px rgb(194, 106, 106);
+
+      }
+      #faq-title {
+         font-size: 25px;
+      }
+
+      .faq-content {
+         border-bottom: 1px solid #e0e0e0;
+      }
+
+      .question {
+         font-size: 19px;
+         padding: 30px 0;
+         cursor: pointer;
+         border: none;
+         outline: none;
+         background: none;
+         width: 40%;
+         text-align: justify;
+      }
+
+      .question:hover {
+         color: #2962ff;
+      }
+
+      [id$="-toggle"] {
+         margin-right: 15px;
+      }
+      h1 {
+          text-align: center;
+          font-size: 3em;
+          color: lightpink;
+          text-shadow: 2px 2px 2px white;
+          text-shadow: 4px 4px 2px rgb(194, 106, 106);
+         }
+         @media screen and (max-width : 1280px){
+            .answer {
+               width : 60%;
+            }
+         }
+         @media screen and (max-width : 1024px){
+            h1{
+                  font-size : 2rem;
+            }
+            .question {
+               width : 50%;
+            }
+            .answer {
+               width : 70%;
+            }
+         }
+         @media screen and (max-width : 768px){
+            h1 {
+               font-size : 2.5rem;
+            }
+            .question{
+               width : 95%;
+               font-size: 2.5rem;
+            }
+            .answer {
+               font-size: 1.4rem;
+               width : 97%;
+            }
+         }
+         @media screen and (max-width : 360px){
+            .answer{
+               padding-top: 15px;
+            }
+         }
+   </style>
+
+<body>
+   <header>
+      <div id="realheader">
+         <a href="kleinbin.html"><img src="image/logo.png" alt="로고사진" height="200px"></a>
+         <nav id="topmenu">
+            <ul>
+               <li><a href="kleinbin.html#introduce"><img src="image/logocookie.png" alt="쿠키일러스트">클라인빈 소개</a>
+                  <ul class="submenu">
+                     <li><a href="dessert.html">메뉴</a></li>
+                  </ul>
+               </li>
+               <li>
+                  <a href="ordercake.html">
+                     주문제작 케이크
+                     <img src="image/logocookie.png" alt="쿠키일러스트">
+                  </a>
+                  <ul class="submenu">
+                     <li> <a href="howtoorder.html">주문양식&신청</a></li>
+                     <li><a href="cakeprice.html">가격 안내</a></li>
+                  </ul>
+               </li>
+               <li>
+                  <a href="onedayclass.html">
+                     원데이 클래스
+                     <img src="image/logocookie.png" alt="쿠키일러스트">
+                  </a>
+                  <ul class="submenu">
+                     <li><a href="cakeclass.html">케이크 클래스</a></li>
+                     <li><a href="cookieclass.html">쿠키 클래스</a></li>
+                  </ul>
+               </li>
+               <li>
+                  <a href="#">
+                     자주묻는질문
+                     <img src="image/logocookie.png" alt="쿠키일러스트">
+                  </a>
+                  <ul class="submenu">
+                     <li><a href="way.html">오시는길</a></li>
+                     <li><a href="faq.html">FAQ</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </nav>
+         <div id="sns">
+            <a href="https://www.instagram.com/klein._.bin/" alt="클라인빈인스타로이동" target="_blank">
+               <img src="image/insta.svg" alt="인스타아이콘">
+            </a>
+            <a href="https://pf.kakao.com/_MNlYT" alt="클라인빈카카오톡으로이동" target="_blank">
+               <img src="image/kakao1.svg" alt="카카오톡아이콘">
+            </a>
+            <a href="https://blog.naver.com/isb1526" alt="클라인빈네이버블로그로이동" target="_blank">
+               <img src="image/blog.svg" alt="블로그아이콘">
+            </a>
+         </div>
+      </div>
+   </header>
+</body>
+
+<div id="container">
+   <h1>여러분의 <span>궁금증</span>을 해결해 드리는 공간입니다.</h1>
+
+<div class="faq-content">
+   <button class="question" id="que-1"><span id="que-1-toggle">♥</span><span>주차 되나요?</span></button>
+   <div class="answer" id="ans-1">주차 가능합니다. 큰길 또는 골목길에 주차 가능</div>
+</div>
+<div class="faq-content">
+   <button class="question" id="que-2"><span id="que-2-toggle">♥</span><span>매장에 먹을 공간이 있나요?</span></button>
+   <div class="answer" id="ans-2"> 먹는 공간 있습니다! </div>
+</div>
+<div class="faq-content">
+   <button class="question" id="que-3"><span id="que-3-toggle">♥</span><span>원데이 클래스 3명이서 들을 수 있나요?</span></button>
+   <div class="answer" id="ans-3"> 매장이 협소하여 원데이 클래스는 최대 2명 가능합니다! 양해부탁드립니다. </div>
+</div>
+<div class="faq-content">
+   <button class="question" id="que-4"><span id="que-4-toggle">♥</span><span>컵케익도 원데이클래스가 가능한가요?</span></button>
+   <div class="answer" id="ans-4"> 준비중입니다. </div>
+</div>
+<div class="faq-content">
+   <button class="question" id="que-5"><span id="que-5-toggle">♥</span><span>주문케이크 2단으로도 가능한가요?</span></button>
+   <div class="answer" id="ans-5"> 2단, 3단 모두 가능하나 시트별로 추가요금이 발생합니다! </div>
+
+      <script>
+         const items = document.querySelectorAll('.question');
+
+         function openCloseAnswer() {
+            const answerId = this.id.replace('que', 'ans');
+
+            if (document.getElementById(answerId).style.display === 'block') {
+               document.getElementById(answerId).style.display = 'none';
+               document.getElementById(this.id + '-toggle').textContent = '♥';
+            } else {
+               document.getElementById(answerId).style.display = 'block';
+               document.getElementById(this.id + '-toggle').textContent = '♡';
+            }
+         }
+
+         items.forEach(item => item.addEventListener('click', openCloseAnswer));
+      </script>
+      <button id="top" onclick="hdMove()"></button>
+      <footer>
+         <address>서울 동대문구 답십리로51길 3-3 1층</address>
+      </footer>
+      <script type="text/javascript" src="js.js"></script>
+      </head>
+
+</html>

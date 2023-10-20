@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel= "stylesheet" type="text/css" href="css.css">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+          <script type="text/javascript" src="js.js"></script>
+          <script type="text/javascript" src="snow.js"></script>
+        <style>
+            #container{font-size: 1vw;}
+            body{background-color: rgba(255, 154, 154,0.4);}
+            div{margin: 0 auto}
+            .cookieclass>img{
+            margin-top: 5px;
+            margin-bottom: 10px;
+            }
+            .cookieclass{
+                display: flex;
+                flex-flow: column wrap;
+                margin-bottom: 100px;
+            }
+            .info1{
+                
+                width:100%;
+                display: flex;
+                flex-flow: row wrap;
+                padding-top: 20px;
+                margin-bottom: 100px;
+                padding-bottom: 20px;
+            }
+            .info>div h1{
+                border: 1px solid black;
+            }
+            .info2{
+               
+               width:100%;
+               padding: 20px;
+               font-size: 1.5em;
+           }
+           .info2 img, .info2 p{
+               display: inline-block;
+           }
+           .info3{
+
+               width: 100%;
+               display: flex;
+               flex-flow: row wrap;
+           }
+           .info3 p{
+               border: 1px solid rgb(224, 83, 58);
+
+               width: 45%;
+               display:flex;
+               align-self: center;
+               background-color: rgba(255, 218, 145, 0.5);
+               font-size: 1.5em;
+               padding: 30px;
+               text-align: center;
+               margin: 2.5%;
+           }
+           .info4{
+               margin-bottom: 150px;
+           }
+           #top{
+               position: fixed;
+               top: 800px;
+               right: 50px;
+           }
+           .cookieclass2{
+               width: 100%;
+               margin: 0 auto;
+               text-align: center;
+           }
+
+           #apply{
+            border: 2px solid rgb(224, 83, 58);
+            padding: 20px;
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+            font-weight: bold;
+            line-height: 40px;
+            margin-top: 100px;
+            font-size: 2em;
+           }
+           #butt1{
+               font-size: 2em;
+               color: rgb(224, 83, 58);
+               background-color:rgb(226, 187, 104) ;
+               border: 2px solid rgb(180, 150, 85);
+               font-weight: bolder;
+           }
+           #butt{
+               font-size: 1.3em;
+               margin:0 auto;
+               font-weight: bolder;
+               background-color:rgb(226, 187, 104);
+               border: 2px solid rgb(180, 150, 85);
+               }
+            #curri{
+                margin-bottom: 50px;
+                text-align: center;
+                background-color: rgb(226, 187, 104);
+                padding: 30px;
+                font-size: 2em;
+            }
+            .process{
+                margin: 0 auto;
+                width: 100%;
+                display: flex;
+                flex-flow: column wrap;
+                margin-bottom: 100px;
+
+            }
+            .process img{
+                border-radius: 20px;
+                width: 90%;
+            }
+            .process1{
+                width: 70%;
+                margin-bottom: 50px;
+            }
+            .next{
+                display: none;
+            }
+            .box{
+                width: 90%;
+                border: 2px solid rgb(224, 83, 58);
+                padding: 10px;
+                font-weight: bold;
+                height: 150px;
+                display: flex;
+                align-items: center;
+               
+                font-size: 2.5em;
+            }
+            .h21{
+                margin-bottom: 50px;
+                font-size: 3em;
+            }
+            .process1{
+                position: relative;
+            }
+            .process1-1{
+                display: block;
+                position: absolute;
+                top: 20px;
+                left: 80px;
+                font-size: 2em;
+                font-weight: bold;
+                background-color: rgba(230, 201, 141,0.8);
+                color:rgb(224, 83, 58) ;
+                border-radius: 20px;
+                padding: 10px;
+            }
+            @media screen and (min-width:768px){
+                .cookieclass{flex-flow: row wrap;}
+                .info1{
+                
+                width:68%;
+                display: flex;
+                flex-flow: row wrap;
+                padding-top: 20px;}
+                .info2{
+                            
+                            width: 30%;
+                            padding: 20px;
+                            font-size:1em
+                        }
+                #apply{font-size:1em}
+                #butt{
+                            font-size: 1.3em;
+                            margin-left: 60%;
+                            font-weight: bolder;
+                            background-color:rgb(226, 187, 104);
+                            border: 2px solid rgb(180, 150, 85);
+                            }
+                .process{
+                                margin: 0 auto;
+                                width: 100%;
+                                display: flex;
+                                flex-flow: row nowrap;
+                                margin-bottom: 100px;
+
+                            }
+                .next{
+                        display: flex;
+                        align-items: center;
+                        width: 10%;
+                            }
+                .process img{
+                                border-radius: 20px;
+                                width: 80%;
+                            }
+                .process1{
+                                width: 40%;
+                            margin-bottom:0px}
+                .box{
+                            width: 100%;
+                            border: 2px solid rgb(224, 83, 58);
+                            padding: 10px;
+                            font-weight: bold;
+                            height: 150px;
+                            display: flex;
+                            align-items: center;
+                            margin-top:0px;
+                            font-size:1em
+                            }
+                .process1-1{
+                                display: none;
+                                position: absolute;
+                                top: 20px;
+                                left: 80px;
+                                font-size: 1.5em;
+                                font-weight: bold;
+                                background-color: rgba(230, 201, 141,0.8);
+                                color:rgb(224, 83, 58) ;
+                                border-radius: 20px;
+                                padding: 10px;
+                            }
+                .process1:hover .process1-1{
+                                display: block;
+                            }
+
+
+            }
+
+
+
+        </style>
+
+    </head>
+    <body>
+        <!-- <canvas id="canvas"></canvas>
+         <style>
+           canvas{
+               display:none;
+               z-index:0;
+               position :relative;
+               pointer-events: none;
+               position: fixed;
+               top:0;
+               }
+        </style> -->
+        <script src="https://tistory1.daumcdn.net/tistory/3229430/skin/image/confetti.js"></script>
+		<header>
+            <div id="realheader">
+                <a href="kleinbin.html"><img src="image/logo.png" alt="로고사진" height="200px"></a>
+                <nav id="topmenu">
+					<ul>
+						<li><a href="kleinbin.html#introduce"><img src="image/logocookie.png" alt="쿠키일러스트">클라인빈 소개</a>
+							<ul class="submenu">
+								<li><a href="dessert.html">메뉴</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="ordercake.html">
+								주문제작 케이크
+								<img src="image/logocookie.png" alt="쿠키일러스트">
+							</a>
+							<ul class="submenu">
+								<li> <a href="howtoorder.html">주문양식&신청</a></li>
+								<li><a href="cakeprice.html">가격 안내</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="onedayclass.html">
+								원데이 클래스
+								<img src="image/logocookie.png" alt="쿠키일러스트">
+							</a>
+							<ul class="submenu">
+								<li><a href="cakeclass.html">케이크 클래스</a></li>
+								<li><a href="cookieclass.html">쿠키 클래스</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">
+								자주묻는질문
+								<img src="image/logocookie.png" alt="쿠키일러스트">
+							</a>
+							<ul class="submenu">
+								<li><a href="way.html">오시는길</a></li>
+								<li><a href="faq.html">FAQ</a></li>
+							</ul>
+						</li>
+					</ul>
+			    </nav>
+				<div id="sns">
+					<a href="https://www.instagram.com/klein._.bin/" alt="클라인빈인스타로이동" target="_blank">
+						<img src="image/insta.svg" alt="인스타아이콘">
+					</a>
+					<a href="https://pf.kakao.com/_MNlYT" alt="클라인빈카카오톡으로이동" target="_blank">
+						<img src="image/kakao1.svg" alt="카카오톡아이콘">
+					</a>
+					<a href="https://blog.naver.com/isb1526" alt="클라인빈네이버블로그로이동" target="_blank">
+						<img src="image/blog.svg" alt="블로그아이콘">
+					</a>
+                </div>
+            </div>
+		</header>
+		<a href="#sns"><button id="top"onclick="hdMove()"></button></a>
+		<div id="container">
+
+                <div class="cookieclass">
+                    <img src="image/cakeclass1.png" alt="원데이 클래스 사진" width=100%>
+                    <div class="info1">
+                        <h1>
+                            실제 수강생들의 생생한후기
+                        </h1>
+                            <div>
+                                <p>클래스후기</p>
+                                <h1>48개</h1>
+                            </div>
+                            <div>
+                                <p>클래스 만족도</p>
+                                <h1>100%</h1>
+                            </div>
+                        <div class="info3">
+
+                            <p>"제 손으로 직접 케이크를 만들었다는게 신기해요!"</p>
+                            <p>"직접 만들어서 선물하니 더 의미 있는것 같았어요"</p>
+                            <p>"집에서도 혼자 만들어 볼 수 있을것 같아요"</p>
+                            <p>"다음 기념일에도 또 만들러 오고 싶어요!"</p>
+                        </div>
+                    </div>
+                    <div class="info2">
+                        <h2>특별한 날 특별한 나만의 케이크를 만들어요!<br>
+                        케이크 원데이 클래스</h2><br>
+                        <h3>
+                            가격: 1인 85000원<br>
+                            *케이크 클래스는 1:1 로 진행 됩니다.*
+                        </h3><br>
+                        <img src="image/person.svg" alt="사람 아이콘" width="20px">
+                        <p>대상: 스페셜한 본인의 케이크를 직접 디자인해서 만들고 싶은사람</p>
+                        <br>
+                        <img src="image/time.svg" alt="시계 아이콘" width="20px">
+                        <p>소요시간: 2시간~3시간</p>
+                        <br>
+                        <p>*레시피는 따로 제공되지 않습니다.*</p>
+                        <br>
+                        <img src="image/like.svg" alt="좋아요 아이콘"  width="20px">
+                        <p>클래스 만족도: 100%</p>
+                        <form>
+                            <input type="button" name="버튼" value="신청하기" onclick="window.open('https://pf.kakao.com/_MNlYT')" id="butt">
+                        </form>
+                    </div>
+                </div>
+                <div class="cookieclass2">
+                    <div class="info4">
+                        <h1>클래스 소개</h1>
+                        <h2>"베이킹이 처음이신 분들도 어려움없이 가능하고 예쁜 케이크를 만들어 가실 수 있는 1:1 원데이클래스!"<br>
+                        직접 만들어 더욱 특별한 케이크를 선물해 보세요❤
+                        </h2><br>
+                    </div>
+                    <h2 id="curri">클래스 진행 과정</h2>
+                    <div class="process">
+                        <div class="process1">
+
+                                <img src="image/ccclass.jpg" alt="케이크시트사진">
+                                <div class="process1-1"><p>1.시트 선택</p></div>
+                            <div class="box">
+                                <p>(위의 사진은 초코 시트 입니다.)<br>
+                                    시트는 클라인빈에서 미리 준비해 놓습니다.<br> 무슨 시트로 만들고 싶은지 얘기 해 주세요!<br>
+                                    시트종류:초코, 얼그레이, 레드벨벳, 당근
+                                </p>
+                            </div>
+                        </div>
+                        <div class="next">
+                            <img src="image/next.png" alt="다음아이콘">
+
+                        </div>
+                        <div class="process1">
+                            <img src="image/cclass2.jpg" alt="버터크림사진">
+                            <div class="process1-1"><p>2.크림 조색</p></div>
+                            <div class="box">
+                                <p>
+                                    크림을 원하는 색으로 조색해요!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="process">
+                        <div class="process1">
+                            <img src="image/cclass6.jpg" alt="아이싱하는사진">
+                            <div class="process1-1"><p>3.케이크 아이싱</p></div>
+                            <div class="box">
+                            <p>
+                                시트위에 크림을 아이싱해요!<br>
+                                아이싱 연습하는 시간 충분히 드립니다!<br>
+                                깔끔하고 쉽게 아이싱하는 클라인빈만의 꿀팁을 알려드립니다!
+                            </p>
+                            </div>
+                        </div>
+                        <div class="next">
+                            <img src="image/next.png" alt="다음아이콘">
+
+                        </div>
+                        <div class="process1">
+                            <img src="image/cclass5.jpg" alt="레터링연습사진">
+                            <div class="process1-1"><p>4.레터링 연습</p></div>
+                            <div class="box">
+
+                                <p>
+                                    케이크위에 쓸 글씨를 아크릴판에 미리 연습해봅니다.<br>
+                                    레터링 또한 연습 시간 충분히 드려요!
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process">
+                        <div class="process1">
+                            <img src="image/cclass1.jpg" alt="케이크디자인하는사진" >
+                            <div class="process1-1"><p>5.케이크 데코레이션</p></div>
+                            <div class="box">
+                                <p>이제 케이크를 조색한 크림으로 원하시는 디자인으로 예쁘게 데코레이션 합니다.</p>
+                            </div>
+                        </div>
+                        <div class="next">
+                            <img src="image/next.png" alt="다음아이콘">
+                        </div>
+                        <div class="process1">
+                            <img src="image/cclass4.jpg" alt="케이크레터링하는사진" >
+                            <div class="process1-1"><p>6.케이크 위에 레터링</p></div>
+                            <div class="box">
+                                <p>
+                                    이제 케이크 위에 레터링을 합니다!!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class=h21>케이크 클래스를 통해 만든 케이크들!</h2>
+                    <div>
+                        <img src="image/cakeclass3.png" alt="케이크사진들" width="100%">
+                    </div>
+
+                    <div id="apply">
+                        <h1><신청양식></h1>
+                        <p>신청날짜/시간</p>
+                        <P>수업가능시간:월~토 1시이후부터</P>
+                        <p>성함/연락처</p>
+                        <p>선택할 시트와 아이싱 종류</p>
+                        <p>
+                            시트:당근,초코,레드벨벳,얼그레이<br>
+                            아이싱:크림치즈,버터크림
+                        </p>
+                        <form>
+                            <input type="button" name="버튼" value="신청하러가기!!" onclick="window.open('https://pf.kakao.com/_MNlYT')" id="butt1">
+                        </form>
+                    </div>
+                </div>
+
+        </div>
+        <button id="top"onclick="hdMove()"></button>
+        <footer>
+            <address>서울 동대문구 답십리로51길 3-3 1층</address>
+        </footer>
+        <!-- <script>
+            $(document).ready(function(){
+               //꽃가루 액션
+               function reAction(){
+                  $("#canvas").fadeIn(1000);
+                  setTimeout(function(){
+                     $("canvas").fadeOut(2000);
+                  },5000);
+               }
+               $(".uoc-icon").on('click',function(){
+                  reAction();
+               });
+            }); -->
+         </script>
+         <script type="text/javascript" src="js.js"></script>
+    </body>
+</html>

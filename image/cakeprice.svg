@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 395 351" style="enable-background:new 0 0 395 351;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.8;fill:none;stroke:#C8A711;stroke-width:3;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#1D1D1B;stroke-miterlimit:10;}
+	.st2{opacity:0.81;fill:none;stroke:#C8A711;stroke-width:3;stroke-miterlimit:10;}
+	.st3{opacity:0.79;fill:none;stroke:#C8A711;stroke-width:3;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#FF7C74;stroke-width:2;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#FF4035;stroke-miterlimit:10;}
+	.st6{font-family:'MyriadPro-Regular';}
+	.st7{font-size:18.7208px;}
+	.st8{font-family:'MoeumTR-HM';}
+</style>
+<g>
+	<ellipse class="st0" cx="197.93" cy="174.54" rx="194.4" ry="68.71"/>
+	<path class="st1" d="M3.52,174.54"/>
+	<line class="st2" x1="3.52" y1="171.78" x2="3.52" y2="278.04"/>
+	<line class="st0" x1="392.33" y1="280.8" x2="392.33" y2="174.54"/>
+	<path class="st3" d="M392.33,278.04c0,37.95-87.04,68.71-194.4,68.71S3.52,315.99,3.52,278.04"/>
+	<ellipse class="st0" cx="142.92" cy="175.42" rx="139.4" ry="59.43"/>
+	<ellipse class="st0" cx="173.85" cy="175.2" rx="170.32" ry="64.95"/>
+	<line class="st4" x1="3.52" y1="177.41" x2="3.52" y2="123.39"/>
+	<line class="st4" x1="3.52" y1="123.39" x2="3.52" y2="11.72"/>
+	<line class="st4" x1="3.52" y1="11.72" x2="177.6" y2="11.72"/>
+	<line class="st4" x1="3.52" y1="51.93" x2="131.65" y2="51.93"/>
+	<line class="st4" x1="3.52" y1="91.75" x2="90.56" y2="91.75"/>
+	<line class="st4" x1="156.5" y1="93.34" x2="282.31" y2="93.34"/>
+	<line class="st4" x1="195.75" y1="51.93" x2="344.17" y2="51.93"/>
+	<line class="st4" x1="392.33" y1="185.37" x2="392.33" y2="11.72"/>
+	<line class="st4" x1="392.33" y1="185.37" x2="392.33" y2="11.72"/>
+	<line class="st4" x1="344.17" y1="177.41" x2="344.17" y2="51.93"/>
+	<line class="st4" x1="282.31" y1="175.42" x2="282.31" y2="93.34"/>
+	<line class="st5" x1="319.43" y1="11.72" x2="319.43" y2="11.72"/>
+	<path class="st4" d="M392.33,11.72c-52.37,0-105.58,0-157.5,0"/>
+	<text transform="matrix(1 0 0 1 185.0703 16.8628)" class="st6 st7">21cm</text>
+	<text transform="matrix(1 0 0 1 142.9189 56.1235)" class="st6 st7">18cm</text>
+	<text transform="matrix(1 0 0 1 104.2227 96.7329)" class="st6 st7">15cm</text>
+	<text transform="matrix(1 0 0 1 135.2534 175.7783)" class="st8 st7">1호</text>
+	<text transform="matrix(1 0 0 1 292.2813 174.5425)" class="st8 st7">2호</text>
+	<text transform="matrix(1 0 0 1 354.1523 174.5425)" class="st8 st7">3호</text>
+</g>
+</svg>
